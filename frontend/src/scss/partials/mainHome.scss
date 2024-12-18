@@ -1,11 +1,249 @@
-.inner-left {
+.container-left {
     width: 50%;
     height: 100%;
-    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .inner-container {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        .top-sec {
+            .starting-text {
+                font-size: 1.2rem;
+                font-weight: 100;
+                padding-left: .3rem;
+            }
+
+            .name {
+                font-weight: 100;
+                font-size: 3rem;
+            }
+
+            .front-end {
+                font-weight: 100;
+                font-size: 2rem;
+                color: #4e5bce;
+            }
+
+            .back-end {
+                font-weight: 100;
+                font-size: 2rem;
+                color: purple;
+            }
+        }
+
+        .bottom-sec {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .comment {
+                color: #57728c;
+                font-weight: 100;
+                font-size: 1.2rem;
+            }
+
+            h5 {
+                font-size: 1.2rem;
+
+                .const {
+                    color: #4554bd;
+                }
+
+                .const-name {
+                    color: #43d7ac;
+                }
+
+                .const-value {
+                    color: #c37e78;
+                }
+            }
+        }
+    }
 }
 
-.inner-right {
+.container-right {
+    position: relative;
     width: 50%;
     height: 100%;
-    border: 1px solid white;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    .container-game {
+        position: relative;
+        width: 80%;
+        height: 60vh;
+        border: 1px solid black;
+        z-index: 100;
+        background: linear-gradient(45deg, rgba(23, 85, 83, 0.529), rgba(67, 217, 172, 0.374));
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* Classe comune per tutti i cerchi */
+        .dot {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            background-color: inherit;
+            font-size: .8rem;
+            font-weight: 100;
+            color: black;
+            border-radius: 50%;
+            box-shadow:
+                2px 2px 9px 3px rgba(0, 0, 0, 0.23),
+                0 0 4px rgba(0, 0, 0, 0.5),
+                inset 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Posizioni specifiche per ciascun cerchio */
+        .dot1 {
+            top: 20px;
+            left: 20px;
+        }
+
+        .dot2 {
+            top: 20px;
+            right: 20px;
+        }
+
+        .dot3 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .dot4 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .inner-game-container {
+            width: 50%;
+            height: 80%;
+            margin-left: 10%;
+            border-radius: 1rem;
+        }
+
+        .inner-rules-container {
+            width: 50%;
+            height: 80%;
+            background-color: transparent;
+            margin-right: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            .main-container-to-flex {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                background-color: transparent;
+
+                .rules {
+                    width: 90%;
+                    background-color: rgba(0, 0, 0, 0.185);
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+
+                    .comment {
+                        background-color: transparent;
+                        color: white;
+                    }
+
+                    .keyboard-arrows {
+                        border: none;
+                        background-color: transparent;
+
+
+                        .cont-up {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: inherit;
+                            padding-top: 2rem;
+                            padding-bottom: .1rem;
+
+                            .arrows {
+                                width: calc(100% / 3 - .1rem);
+                                background-color: black;
+                                border-radius: .5rem;
+                                padding: .6rem 0;
+                            }
+                        }
+
+                        .cont-down {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: .1rem;
+                            background-color: inherit;
+
+                            .arrows {
+                                width: calc(100% / 3 - .1rem);
+                                background-color: black;
+                                border-radius: .5rem;
+                                padding: .6rem 0;
+                            }
+                        }
+                    }
+
+                }
+
+
+                .container-food-left {
+                    width: 90%;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    background-color: transparent;
+
+                    .comment {
+                        background-color: transparent;
+                    }
+
+                    .inner-food-container {
+                        background-color: transparent;
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-top: 1rem;
+                        gap: 1rem;
+
+                        .food {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+
+                        }
+                    }
+                }
+            }
+
+
+            button {
+                border: 1px solid white;
+                padding: 1rem;
+                background-color: transparent;
+                border-radius: 1rem;
+            }
+        }
+    }
+
 }
