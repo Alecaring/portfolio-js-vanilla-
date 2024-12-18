@@ -1,8 +1,8 @@
 .container-navbar {
     width: 100%;
-    height: 7vh; //? grandezza principale
+    height: 7%; //? grandezza principale
     display: flex;
-    border-bottom: .1px solid rgba(128, 128, 128, 0.653);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.653);
     border-radius: 1rem 1rem 0 0;
     .inner-container-name {
         width: 20%;
@@ -33,16 +33,16 @@
                 
                 li {
                     height: 100%;
-                    border-left: .1px solid rgba(128, 128, 128, 0.653);
+                    border-left: 1px solid rgba(128, 128, 128, 0.653);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 0 3rem;
+                    padding: 0 2rem;
                     background-color: #001627;
 
 
                     &:last-child {
-                        border-right: .1px solid rgba(128, 128, 128, 0.653);
+                        border-right: 1px solid rgba(128, 128, 128, 0.653);
                     }
                 }
 
@@ -63,8 +63,8 @@
                     align-items: center;
                     justify-content: center;
                     padding: 0 3rem;
-                    border-left: .1px solid rgba(128, 128, 128, 0.653);
-                    border-right: .1px solid rgba(128, 128, 128, 0.653);
+                    border-left: 1px solid rgba(128, 128, 128, 0.653);
+                    border-right: 1px solid rgba(128, 128, 128, 0.653);
                     background-color: #001627;
                 }
             }
