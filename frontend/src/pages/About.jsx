@@ -1,7 +1,9 @@
+import Navbar from "../components/Navbar";
+
 function AboutPage() {
     return (
         <>
-            about
+            <Navbar />
         </>
     );
 }
