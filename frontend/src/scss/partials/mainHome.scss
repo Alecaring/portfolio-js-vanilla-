@@ -1,4 +1,4 @@
-.container-left {
+.container-left-home {
     width: 50%;
     height: 100%;
     display: flex;
@@ -67,7 +67,7 @@
     }
 }
 
-.container-right {
+.container-right-home {
     position: relative;
     width: 50%;
     height: 100%;
@@ -139,6 +139,27 @@
             height: 80%;
             margin-left: 10%;
             border-radius: 1rem;
+
+            .game-cell {
+                width: 100%;
+                height: 80%;
+                border: 1px solid white;
+                border-radius: 1rem;
+            }
+            .game-button-start {
+                width: 100%;
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                padding: 1rem;
+                background-color: #fea45f;
+                border-radius: 1rem;
+                color: black;
+                }
+            }
         }
 
         .inner-rules-container {

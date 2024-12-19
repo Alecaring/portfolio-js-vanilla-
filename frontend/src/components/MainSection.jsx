@@ -1,10 +1,11 @@
-import MainHome from "./main/MainHome";
 import "../scss/partials/mainSection.scss"
 
-function MainSection({mainHome}) {
+function MainSection({mainHome, mainAbout, mainContacts}) {
     return (
         <section className="components-main-section">
             {mainHome}
+            {mainAbout}
+            {mainContacts}
         </section>
 
     );

@@ -1,0 +1,124 @@
+.sidebar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    border-right: .1px solid white;
+}
+
+.main {
+    width: 80%;
+    height: 100%;
+    display: flex;
+
+    .container-left-contacts {
+        width: 50%;
+        height: 100%;
+        border: 1px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .top-nav {
+            width: 100%;
+            padding: .5rem 0;
+            border: 1px solid white;
+        }
+
+        .form-contacts {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            form {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    input,
+                    textarea {
+                        width: 100%;
+                        padding: 1rem;
+                        border-radius: 1rem;
+                        border: 1px solid rgb(139, 139, 139);
+                    }
+                }
+
+                button {
+                    padding: .5rem 1rem;
+                    margin-top: 2rem;
+                    border: none;
+                    background-color: #1d2a3a;
+                    border-radius: .5rem;
+                }
+            }
+        }
+    }
+
+    .container-right-contacts {
+        width: 50%;
+        height: 100%;
+        border: 1px solid white;
+
+        .top-nav {
+            width: 100%;
+            padding: .5rem 0;
+            border: 1px solid white;
+        }
+
+        .form-contacts-graphics {
+            width: 90%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: .5rem;
+            margin: 0 auto;
+
+            .cont-rows-contacts {
+                display: flex;
+                align-items: flex-start;
+                gap: .6rem;
+
+                .colls-numered {
+                    width: 10px;
+                    color: gray;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 1rem;
+                }
+
+                .const {
+                    color: #b57fcc;
+                }
+
+                .const-assignament {
+                    color: #4c5cd4;
+                }
+                .method {
+                    color: #4c5cd4;
+                    
+                }
+                .class {
+                    display: inline-block;
+                    white-space: wrap;
+                    color: #ec9b5b;
+                }
+                .space1 {
+                    padding-left: 2rem;
+                }
+            }
+        }
+    }
+}

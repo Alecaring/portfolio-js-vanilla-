@@ -5,7 +5,7 @@ import "../../scss/partials/MainHome.scss";
 function MainHome() {
     return (
         <>
-            <div className="container-left">
+            <div className="container-left-home">
                 <div className="inner-container">
                     <div className="top-sec">
                         <h3 className="starting-text">Hi all. I am</h3>
@@ -20,22 +20,22 @@ function MainHome() {
                     </div>
                 </div>
             </div>
-            <div className="container-right">
+            <div className="container-right-home">
                 <img src="/background_blurs.svg" alt="" />
                 <div className="container-game">
-                    <div className="dot1 dot">
-                        x
+                    <div className="dot1 dot">x</div>
+                    <div className="dot2 dot">x</div>
+                    <div className="dot3 dot">x</div>
+                    <div className="dot4 dot">x</div>
+
+                    {/* contenitore destra */}
+                    <div className="inner-game-container">
+                        <div className="game-cell"></div>
+                        <div className="game-button-start">
+                            <button>start game</button>
+                        </div>
                     </div>
-                    <div className="dot2 dot">
-                        x
-                    </div>
-                    <div className="dot3 dot">
-                        x
-                    </div>
-                    <div className="dot4 dot">
-                        x
-                    </div>
-                    <div className="inner-game-container"></div>
+                    {/* contenitore sinistra */}
                     <div className="inner-rules-container">
                         <div className='main-container-to-flex'>
                             <div className="rules">
