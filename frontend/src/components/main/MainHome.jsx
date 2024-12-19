@@ -21,7 +21,7 @@ function MainHome() {
                 </div>
             </div>
             <div className="container-right-home">
-                <img src="/background_blurs.svg" alt="" />
+                <img src="/backgroundBlurs.svg" alt="" />
                 <div className="container-game">
                     <div className="dot1 dot">x</div>
                     <div className="dot2 dot">x</div>

@@ -1,14 +1,20 @@
 import "../../scss/partials/mainContacts.scss";
 import BaseMainDiv2 from "./common/BaseMainDiv2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { DateTime } from "luxon";
 
 function MainContacts() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [name, setName] = useState("jhon Doe");
+    const [email, setEmail] = useState("user@gmail.com");
+    const [message, setMessage] = useState("Want you leave a message ?");
+    const [day, setDay] = useState("");
+    const [month, setMonth] = useState("");
+    const [year, setYear] = useState("");
 
     const handleName = (e) => {
         setName(e.target.value);
+        console.log(DateTime.now().toString());
+
     };
 
     const handleEmail = (e) => {
@@ -18,6 +24,14 @@ function MainContacts() {
     const handleMessage = (e) => {
         setMessage(e.target.value);
     };
+    useEffect(() => {
+        let dt = DateTime.now();
+        setYear(dt.year);
+        setMonth(dt.month);
+        setDay(dt.day);
+
+    }, [])
+
 
     return (
         <>
@@ -26,7 +40,9 @@ function MainContacts() {
             <div className="main">
                 <div className="container-left-contacts">
                     <div className="top-nav">
-                        <p>contacts</p>
+                        <div className="cell-opened">
+                            <span>contacts</span>
+                        </div>
                     </div>
                     <div className="form-contacts">
                         <form action="/">
@@ -52,7 +68,9 @@ function MainContacts() {
                 </div>
                 <div className="container-right-contacts">
                     <div className="top-nav">
-                        <p>contacts</p>
+                        <div className="cell-opened">
+                            <span>contacts</span>
+                        </div>
                     </div>
                     <div className="form-contacts-graphics">
                         <div className="cont-rows-contacts">
@@ -74,7 +92,7 @@ function MainContacts() {
                             <span className="colls-numered">6</span> <span className="const-assignament space1">message:</span> <span className="class">"{message.trim()}",</span>
                         </div>
                         <div className="cont-rows-contacts">
-                            <span className="colls-numered">7</span> <span className="const-assignament space1">date:</span> <span className="class">"Thu 21 Apr",</span>
+                            <span className="colls-numered">7</span> <span className="const-assignament space1">date:</span> <span className="class">"{`${day}-${month}-${year}`}",</span>
                         </div>
                         <div className="cont-rows-contacts">
                             <span className="colls-numered">8</span> <span>&#125;</span>

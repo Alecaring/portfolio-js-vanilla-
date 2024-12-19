@@ -13,15 +13,21 @@
     .container-left-contacts {
         width: 50%;
         height: 100%;
-        border: 1px solid white;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        border-right: .1px solid white;
 
         .top-nav {
             width: 100%;
-            padding: .5rem 0;
-            border: 1px solid white;
+            border-bottom: .1px solid white;
+
+            .cell-opened {
+                padding: .5rem 1.5rem;
+                border-right: .1px solid white;
+                display: inline-block;
+                height: 100%;
+            }
         }
 
         .form-contacts {
@@ -68,12 +74,18 @@
     .container-right-contacts {
         width: 50%;
         height: 100%;
-        border: 1px solid white;
+
 
         .top-nav {
             width: 100%;
-            padding: .5rem 0;
-            border: 1px solid white;
+            border-bottom: .1px solid white;
+            
+            .cell-opened {
+                padding: .5rem 1.5rem;
+                border-right: .1px solid white;
+                display: inline-block;
+                height: 100%;
+            }
         }
 
         .form-contacts-graphics {
@@ -106,15 +118,18 @@
                 .const-assignament {
                     color: #4c5cd4;
                 }
+
                 .method {
                     color: #4c5cd4;
-                    
+
                 }
+
                 .class {
                     display: inline-block;
                     white-space: wrap;
                     color: #ec9b5b;
                 }
+
                 .space1 {
                     padding-left: 2rem;
                 }
