@@ -1,8 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronDown, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import "../../../scss/partials/sidebars/sidebarAbout.scss";
+import { useEffect, useState } from 'react';
 
 function SidebarAbout() {
+    const [isPersonalInfo, setIsPersonalInfo] = useState(true);
+    const [isContactInfo, setIsContactInfo] = useState(true);
+
+    useEffect(() => {
+        // isPersonalInfo = !isPersonalInfo;
+        // isContactInfo = !isContactInfo;
+
+        
+    }, [])
+
     return (
         <>
             <div className="left">

@@ -1,5 +1,4 @@
 import "../../scss/partials/mainContacts.scss";
-import BaseMainDiv2 from "./common/BaseMainDiv2";
 import { useEffect, useState } from "react";
 import { DateTime } from "luxon";
 
