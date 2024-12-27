@@ -11,7 +11,6 @@
         align-items: center;
         padding-left: 2rem;
         border-radius: 1rem 0 0 0;
-        background-color: #001627;
 
 
     }
@@ -21,7 +20,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #001627;
 
 
         .links-left {
@@ -38,7 +36,6 @@
                     align-items: center;
                     justify-content: center;
                     padding: 0 2rem;
-                    background-color: #001627;
 
 
                     &:last-child {
@@ -65,7 +62,6 @@
                     padding: 0 3rem;
                     border-left: 1px solid rgba(128, 128, 128, 0.653);
                     border-right: 1px solid rgba(128, 128, 128, 0.653);
-                    background-color: #001627;
                 }
             }
         }

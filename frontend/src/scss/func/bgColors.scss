@@ -1,0 +1,10 @@
+$colors: (
+    black: black,
+    dark-blue: #001627,
+);
+
+@each $color, $value in $colors {
+    .bg-#{$color} {
+        background-color: $value;
+    }
+};

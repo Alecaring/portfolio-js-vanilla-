@@ -5,21 +5,27 @@ import "../../scss/partials/MainHome.scss";
 function MainHome() {
     return (
         <>
+
+
             <div className="container-left-home">
                 <div className="inner-container">
                     <div className="top-sec">
                         <h3 className="starting-text">Hi all. I am</h3>
                         <h1 className="name">Alessio Caringella</h1>
-                        <h2 className="front-end">&gt; Front-end developer</h2>
-                        <h2 className="back-end">&gt; Back-end developer</h2>
+                        <h2 className="front-end text-blu-lilla">&gt; Front-end developer</h2>
+                        <h2 className="back-end text-purple">&gt; Back-end developer</h2>
                     </div>
                     <div className="bottom-sec">
-                        <h4 className="comment">// complete game to continue</h4>
-                        <h4 className="comment">// you can also see it on my Github page</h4>
-                        <h5><span className="const">const </span><span className="const-name">githublink </span>= <a className="const-value" href="#">"https://github.com/Alecaring"</a></h5>
+                        <h4 className="text-blu-pietra">// complete game to continue</h4>
+                        <h4 className="text-blu-pietra">// you can also see it on my Github page</h4>
+                        <h5><span className="text-blu-lilla">const </span><span className="text-turchese-chiaro">githublink </span>= <a className="text-terracotta-chiara" href="#">"https://github.com/Alecaring"</a></h5>
                     </div>
-                </div>
+                </div> 
             </div>
+
+
+
+
             <div className="container-right-home">
                 <img src="/backgroundBlurs.svg" alt="" />
                 <div className="container-game">
@@ -39,8 +45,8 @@ function MainHome() {
                     <div className="inner-rules-container">
                         <div className='main-container-to-flex'>
                             <div className="rules">
-                                <p className="comment">// use keyboard</p>
-                                <p className="comment">// arrows to play</p>
+                                <p className="text-blu-pietra">// use keyboard</p>
+                                <p className="text-blu-pietra">// arrows to play</p>
                                 <div className="keyboard-arrows">
                                     <div className="cont-up">
                                         <FontAwesomeIcon className='arrows' icon={faChevronUp} />
@@ -53,7 +59,7 @@ function MainHome() {
                                 </div>
                             </div>
                             <div className='container-food-left'>
-                                <p className="comment">// food left</p>
+                                <p className="text-blu-pietra">// food left</p>
                                 <div className="inner-food-container">
                                     <div className="food1 food"></div>
                                     <div className="food2 food"></div>

@@ -27,13 +27,11 @@
             .front-end {
                 font-weight: 100;
                 font-size: 2rem;
-                color: #4e5bce;
             }
 
             .back-end {
                 font-weight: 100;
                 font-size: 2rem;
-                color: purple;
             }
         }
 
@@ -43,7 +41,6 @@
             gap: 1rem;
 
             .comment {
-                color: #57728c;
                 font-weight: 100;
                 font-size: 1.2rem;
             }
@@ -51,17 +48,6 @@
             h5 {
                 font-size: 1.2rem;
 
-                .const {
-                    color: #4554bd;
-                }
-
-                .const-name {
-                    color: #43d7ac;
-                }
-
-                .const-value {
-                    color: #c37e78;
-                }
             }
         }
     }

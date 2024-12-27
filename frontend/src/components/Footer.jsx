@@ -5,7 +5,7 @@ import "../scss/partials/footer.scss"
 function Footer() {
     return (
         <>
-            <div className="container-footer">
+            <div className="container-footer text-white">
                 <div className="inner-container-left">
                     <ul>
                         <li>find me in:</li>

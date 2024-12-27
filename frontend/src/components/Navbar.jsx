@@ -3,7 +3,7 @@ import "../scss/partials/navbar.scss";
 
 function Navbar() {
     return (
-        <div className="container-navbar">
+        <div className="container-navbar text-white">
             <div className="inner-container-name">
                 <Link to="/">alessio-caringella</Link>
             </div>

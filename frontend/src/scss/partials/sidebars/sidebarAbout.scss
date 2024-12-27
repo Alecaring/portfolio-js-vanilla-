@@ -8,7 +8,6 @@
     .cell {
         width: 100%;
         padding: 1rem 0;
-        border: .1px solid white;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -18,39 +17,84 @@
 .right {
     width: 80%;
     height: 100%;
-    border: 1px solid white;
+    border-left: .1px solid rgb(145, 144, 144);
+    border-right: .1px solid rgb(145, 144, 144);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    ul {
-        padding: 1rem 0;
+    .main-dropdown-personal-info,
+    .main-dropdown-contacts {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
+
+    .list-about-container {
+        width: 100%;
+    }
+
+    .dropdown-list {
+        padding: 0;
+        width: 100%;
+        height: 0; // Cambia da 0vh a 0
+        transform: scaleY(0); // Scala in verticale per nascondere
+        transform-origin: top; // Origine della trasformazione dal top
+        // transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+        transition: .2s ease-in-out;
+        overflow: hidden; // Aggiungi per nascondere il contenuto durante la transizione
+    }
+
+    .folders {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1.5rem;
+
+        p {
+            padding: .5rem 0;
+        }
+    }
+
+    .dropdown-list.open {
+        padding: 1rem 0;
+        height: auto;
+        transform: scaleY(1); // Ritorna alla scala originale
+        transition: .2s ease-in-out;
+        
+    }
+
+    .cell-to-dropdown {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 5px 0;
+    }
+
+
 
     .main-dropdown-personal-info {
         display: flex;
         align-items: center;
         gap: 1rem;
         padding: 0 1rem;
-        border: 1px solid white;
+        border: .1px solid rgb(145, 144, 144);
+
         p {
             padding: .5rem 0;
         }
     }
+
     .main-dropdown-contacts {
         display: flex;
         align-items: center;
         gap: 1rem;
         padding: 0 1rem;
-        border: 1px solid white;
+        border: .1px solid rgb(145, 144, 144);
 
         p {
             padding: .5rem 0;
         }
     }
-}
-
-.cell-to-dropdown {
-    width: 100%;
-    padding: .5rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
