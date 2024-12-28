@@ -5,6 +5,8 @@ $colors: (
     blu-pietra: #57728c,
     turchese-chiaro: #43d7ac,
     terracotta-chiara: #c37e78,
+    bordeaux: rgb(150, 57, 57),
+    orange: orange,
 );
 
 @each $color, $value in $colors {

@@ -57,6 +57,21 @@
         }
     }
 
+    .sub-item-list {
+        width: 100%;
+        padding: .5rem 2rem;
+
+        .sub-item {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            p {
+                padding: .5rem 0;
+                font-size: .8rem;
+            }
+        }
+    }
+
     .dropdown-list.open {
         padding: 1rem 0;
         height: auto;

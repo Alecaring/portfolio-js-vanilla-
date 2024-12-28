@@ -20,13 +20,26 @@
 
         .top-nav {
             width: 100%;
-            border-bottom: .1px solid white;
+            border-bottom: .1px solid rgb(154, 154, 154);
 
             .cell-opened {
                 padding: .5rem 1.5rem;
                 border-right: .1px solid white;
                 display: inline-block;
                 height: 100%;
+
+                .inner-cellOpend {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: .7rem;
+
+                    svg {
+                        font-size: .7rem;
+                        padding-top: .1rem;
+                    }
+
+                }
             }
         }
 
@@ -38,7 +51,7 @@
             justify-content: center;
 
             form {
-                width: 50%;
+                width: 60%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -56,15 +69,21 @@
                         width: 100%;
                         padding: 1rem;
                         border-radius: 1rem;
-                        border: 1px solid rgb(139, 139, 139);
+                        border: 1px solid #8b8b8b;
+                        /* Un colore più scuro */
+                        background-color: #f9f9f9;
+                        /* Colore chiaro per evidenziare l'ombra */
+                        box-shadow: inset -8px -8px -16px rgba(255, 222, 173, 0.8),
+                            inset 8px 8px 16px rgba(245, 222, 179, 0.8);
                     }
+
                 }
 
                 button {
                     padding: .5rem 1rem;
                     margin-top: 2rem;
                     border: none;
-                    background-color: #1d2a3a;
+                    background-color: #6c91bd;
                     border-radius: .5rem;
                 }
             }
@@ -79,12 +98,26 @@
         .top-nav {
             width: 100%;
             border-bottom: .1px solid rgb(183, 175, 175);
-            
+
             .cell-opened {
+                width: auto;
                 padding: .5rem 1.5rem;
-                border-right: .1px solid white;
                 display: inline-block;
+                border-right: .1px solid white;
                 height: 100%;
+
+                .inner-cellOpend {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: .7rem;
+
+                    svg {
+                        font-size: .7rem;
+                        padding-top: .1rem;
+                    }
+
+                }
             }
         }
 
@@ -105,7 +138,6 @@
 
                 .colls-numered {
                     width: 10px;
-                    color: gray;
                     display: flex;
                     justify-content: flex-end;
                     margin-right: 1rem;

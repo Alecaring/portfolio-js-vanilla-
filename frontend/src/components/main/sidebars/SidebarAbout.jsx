@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronDown, faEnvelope, faPhone, faFolder, faCode, faIcicles, faGamepad, faCaretRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faHandsBound, faLaptopCode, faTerminal, faChevronDown, faEnvelope, faPhone, faFolder, faCode, faIcicles, faGamepad, faCaretRight, faCaretDown, faBrain, faBaseballBatBall } from '@fortawesome/free-solid-svg-icons';
 import "../../../scss/partials/sidebars/sidebarAbout.scss";
 import { useState } from 'react';
 
-function SidebarAbout() {
+function SidebarAbout({onItemClick}) {
 
     // Dati simulati (come se arrivassero dal server)
     const [sections, setSections] = useState([
@@ -16,9 +16,11 @@ function SidebarAbout() {
                     icon: faFolder,
                     label: 'bio',
                     subItems: [
-                        { label: 'Born in Italy' },
-                        { label: 'Web developer' },
-                        { label: 'Loves technology' }
+                        { label: 'born_in_italy', icon: faHandsBound, iconClass: 'text-turchese-chiaro' },
+                        { label: 'web_developer', icon: faTerminal, iconClass: 'text-terracotta-chiara' },
+                        { label: 'soft_skils', icon: faBrain, iconClass: 'text-orange' },
+                        { label: 'hard_skils', icon: faBaseballBatBall, iconClass: 'text-purple' },
+                        { label: 'loves_technology', icon: faLaptopCode, iconClass: 'text-terracotta-chiara' }
                     ],
                     iconClass: 'text-purple'
                 },
@@ -83,6 +85,13 @@ function SidebarAbout() {
         );
     };
 
+    const handleItemClick = (item) => {
+        console.log("clicked on:" + " " + item);
+        
+        onItemClick(item);
+
+    };
+
     return (
         <>
 
@@ -138,7 +147,10 @@ function SidebarAbout() {
                                     {item.subItems && item.isOpen && (
                                         <ul className="sub-item-list">
                                             {item.subItems.map((subItem, subIndex) => (
-                                                <li key={subIndex} className="sub-item">
+                                                <li onClick={() => handleItemClick(subItem.label)} key={subIndex} className="sub-item">
+                                                    <FontAwesomeIcon icon={subItem.icon} className={subItem.iconClass} style={{
+                                                        fontSize: ".8rem"
+                                                    }} />
                                                     <p>{subItem.label}</p>
                                                 </li>
                                             ))}
