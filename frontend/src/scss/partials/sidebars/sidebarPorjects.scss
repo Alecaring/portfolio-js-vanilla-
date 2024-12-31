@@ -1,0 +1,39 @@
+.container-sidebar-projects {
+    width: 20%;
+    height: 100%;
+    border-right: .1px solid grey;
+
+    .main-folder {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid white;
+        padding: .5rem 1.5rem;
+
+    }
+
+    ul {
+        padding: 1rem 0;
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 1px solid white;
+
+            &:checked {
+                background-color: #ff5733;
+                border-color: #ff5733;
+            }
+        }
+
+        .list-item {
+            width: 100%;
+            padding: .5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}

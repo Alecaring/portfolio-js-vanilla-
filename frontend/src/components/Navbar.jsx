@@ -1,30 +1,38 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../scss/partials/navbar.scss";
 
 function Navbar() {
     return (
         <div className="container-navbar text-white">
             <div className="inner-container-name">
-                <Link to="/">alessio-caringella</Link>
+                <NavLink to="/">alessio-caringella</NavLink>
             </div>
             <div className="inner-container-links">
                 <div className="links-left">
                     <ul>
                         <li>
-                        <Link to="/">_hello</Link>
+                            <NavLink to="/" className={({ isActive }) => isActive ? "active" : "link"}>
+                                _hello
+                            </NavLink>
                         </li>
                         <li>
-                        <Link to="/about">_about-me</Link>
+                            <NavLink to="/about" className={({ isActive }) => isActive ? "active" : "link"}>
+                                _about-me
+                            </NavLink>
                         </li>
                         <li>
-                        <Link to="/projects">_projects</Link>
+                            <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : "link"}>
+                                _projects
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="links-right">
                     <ul>
                         <li>
-                        <Link to="/contacts">_contact-me</Link>
+                            <NavLink to="/contacts" className={({ isActive }) => isActive ? "active" : "link"}>
+                                _contact-me
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
