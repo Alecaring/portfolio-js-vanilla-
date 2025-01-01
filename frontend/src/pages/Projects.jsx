@@ -6,9 +6,9 @@ import Navbar from "../components/Navbar";
 function ProjectsPage() {
     return (
         <>
-            <Navbar />
+            <Navbar ownerName="alessio-caringella" />
             <MainSection mainProgects={<MainProgects/>} />
-            <Footer />
+            <Footer footerAccess="_admin-area" />
         </>
     );
 }

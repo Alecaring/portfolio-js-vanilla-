@@ -6,9 +6,9 @@ import Navbar from "../components/Navbar";
 function ContactsPage() {
     return (
         <>
-            <Navbar />
+            <Navbar ownerName="alessio-caringella" />
             <MainSection mainContacts={<MainContacts />} />
-            <Footer />
+            <Footer footerAccess="_admin-area" />
         </>
     );
 }
