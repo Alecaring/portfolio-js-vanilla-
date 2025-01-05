@@ -12,13 +12,15 @@ const bcrypt = require("bcryptjs");
 exports.signup = async (req, res) => {
     // save user to database
     try {
+        console.log("_CONTROLLER_REGISTER_" + JSON.stringify(req.body));
+
         const user = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 8)
         });
 
-        if (req.body.roles) {
+        if (req.body.roles && req.body.roles.length > 0) {
             const roles = await Role.findAll({
                 where: {
                     name: {
@@ -27,19 +29,23 @@ exports.signup = async (req, res) => {
                 }
             });
 
-            const result = user.setRoles(roles);
-            if (result) {
-                return res.send({
-                    message: "User registered successfully!"
-                });
-            } else {
-                const result = user.setRoles([1]);
-                return res.send({
-                    message: "User registered successfully!"
-                });
-            };
+            // Assegna i ruoli trovati all'utente
+            await user.setRoles(roles);
+            return res.status(200).send({
+                success: true,
+                message: "User registered successfully with roles!"
+            });
 
+
+        } else {
+            // Se non ci sono ruoli, assegna il ruolo predefinito (ID 1)
+            await user.setRoles([1]);  // Assegna il ruolo predefinito
+            return res.status(200).send({
+                success: true,
+                message: "User registered successfully with default role!"
+            });
         }
+
     } catch (err) {
         res.status(500).send({ message: err.message });
     }

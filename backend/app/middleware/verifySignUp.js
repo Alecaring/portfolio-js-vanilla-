@@ -1,10 +1,10 @@
-const { where } = require("sequelize");
 const db = require("../models");
 const ROLES = db.ROLES;
-const User = db.User;
+const User = db.user;
 
 checkDuplicateUsernameOrEmail = async (req, res, next) => {
     try {
+        // console.log('Body ricevuto:', req.body); // controlla il body che arriva dal front
         // username
         let user = await User.findOne({
             where: {
@@ -34,6 +34,7 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
         next();
 
     } catch (err) {
+        // console.error('Errore nel middleware:', err.message); // errori nel miidleware
         return res.status(500).json({
             message: err.message
         });
