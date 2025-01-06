@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "create-tables": "node app/scripts/createDatabase.data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alessio_caringella",
