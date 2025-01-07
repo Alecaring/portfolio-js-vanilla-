@@ -9,9 +9,14 @@ exports.getAllProjects = async (req, res, next) => {
 
         console.log("_CONTROLLER_PROJECTS" + project);
 
-        return project;
+        if (project === 0) {
+            console.log("progetti vuoti");
+            return res.send("progetti vuoti")
+        }
+
+        return res.send(project);
 
     } catch (err) {
-        console.error("Errore durante il recupero degli utenti", err);
+        console.error("Errore durante il recupero dei progetti", err);
     }
 };

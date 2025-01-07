@@ -5,7 +5,7 @@ const router = require("express").Router();
 
 
 
-router.get("/", controller.getAllProjects);
+router.get("/get", controller.getAllProjects);
 
 
 module.exports = router;

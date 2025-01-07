@@ -1,10 +1,13 @@
+import { ProjectProvider } from "../contexts/ProjectsContext";
 import "../scss/partials/mainSection.scss"
 
-function MainSection({mainHome, mainAbout, mainContacts, mainProgects, mainLogin}) {
+function MainSection({ mainHome, mainAbout, mainContacts, mainProgects, mainLogin }) {
     return (
         <section className="components-main-section text-white">
+            <ProjectProvider>
+                {mainProgects}
+            </ProjectProvider>
             {mainHome}
-            {mainProgects}
             {mainAbout}
             {mainContacts}
             {mainLogin}
