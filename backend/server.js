@@ -34,10 +34,11 @@ app.use(
 // database
 const db = require("./app/models");
 const Role = db.role;
+const Project = db.project;
 
 // db.sequelize.sync();
 // force: true will drop the table if it already exists
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   console.log('Drop and Resync Database with { force: true }');
   initial();
 });
@@ -54,7 +55,7 @@ require("./app/routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {  
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
@@ -72,5 +73,13 @@ function initial() {
   Role.create({
     id: 3,
     name: "admin",
+  });
+
+  Project.create({
+    title: "Whatsapp",
+    subtitle: "_ui-ux design",
+    image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
+    icon: "R",
+    description: "il progetto piu bello del mondo",
   });
 }

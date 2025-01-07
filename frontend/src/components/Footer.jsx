@@ -51,6 +51,24 @@ function Footer({ footerAccess }) {
                         </li>
                     </ul>
                 </div>
+
+                {/* footer per dispositivi diversi da desktop */}
+                <div className="inner-container-left-mobile">
+                    <span>find me in:</span>
+                </div>
+                <div className="inner-container-right-mobile">
+                    <ul>
+                        <li>
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon={faFacebook} />
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon={faGithub} />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </>
     );

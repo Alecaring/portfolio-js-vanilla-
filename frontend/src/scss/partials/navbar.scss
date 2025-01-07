@@ -96,6 +96,13 @@
     .container-hamburger-menu {
         display: none;
     }
+
+    .dropdown-menu {
+        display: none;
+    }
+    .dropdown-menu-open {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -206,22 +213,26 @@
         }
 
         .dropdown-menu {
+            display: inline-block;
             position: absolute;
-            top: 0%;
+            top: 10%;
             right: -100%;
             width: 100%;
-            height: 100%;
+            height: 90%;
             transition: .4s ease-in-out;
+            z-index: 1000;
         }
 
         .dropdown-menu-open {
+            display: inline-block;
             position: absolute;
-            top: 0%;
+            top: 10%;
             right: 0%;
-            background-color: rebeccapurple;
+            background-color: #001627;
             width: 100%;
-            height: 100%;
+            height: 90%;
             transition: .4s ease-in-out;
+            z-index: 1000;
 
         }
 
@@ -231,6 +242,16 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
+        }
+
+        .list-group-navbar {
+            width: 100%;
+            height: 90%;
+            li {
+                width: 100%;
+                padding: 1.5rem;
+                border-bottom: .1px solid grey;
+            }
         }
     }
 }

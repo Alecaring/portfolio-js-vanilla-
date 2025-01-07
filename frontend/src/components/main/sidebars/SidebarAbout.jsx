@@ -10,7 +10,7 @@ function SidebarAbout({onItemClick}) {
         {
             id: 'personal-info',
             title: 'personal-info',
-            isOpen: true,
+            isOpen: false,
             items: [
                 {
                     icon: faFolder,
@@ -48,7 +48,7 @@ function SidebarAbout({onItemClick}) {
         {
             id: 'contacts',
             title: 'contacts',
-            isOpen: true,
+            isOpen: false,
             items: [
                 { icon: faEnvelope, label: 'caringella@gmail.com', iconClass: '' },
                 { icon: faPhone, label: '+39-3921340458', iconClass: '' },
@@ -105,6 +105,7 @@ function SidebarAbout({onItemClick}) {
                 <div className="cell">
                     <FontAwesomeIcon icon={faGamepad} />
                 </div>
+                <p>_contact-me</p>
             </div>
 
 

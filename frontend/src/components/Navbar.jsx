@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function Navbar({ ownerName }) {
     const { isAuth } = useAuth();
@@ -75,15 +76,46 @@ function Navbar({ ownerName }) {
             <div className="container-hamburger-menu">
                 <FontAwesomeIcon icon={faBars} onClick={openMenu} />
             </div>
-            <div className={ isMenuOpen ? "dropdown-menu-open" : "dropdown-menu" }>
-                <div className="container-exit-button-menu">
-                    <FontAwesomeIcon icon={faX} onClick={openMenu} />
-                </div>
-                <ul>
-                    <li>link</li>
-                    <li>link</li>
-                    <li>link</li>
+            <div className={isMenuOpen ? "dropdown-menu-open" : "dropdown-menu"}>
+
+                <ul className="list-group-navbar">
+                    <li>
+                        <NavLink
+                            to={isAuth ? "/admin" : "/"}
+                            end
+                            className={({ isActive }) => (isActive ? "active" : "link")}
+                        >
+                            _hello
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={isAuth ? "/admin/about" : "/about"}
+                            className={({ isActive }) => (isActive ? "active" : "link")}
+                        >
+                            _about-me
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={isAuth ? "/admin/projects" : "/projects"}
+                            className={({ isActive }) => (isActive ? "active" : "link")}
+                        >
+                            _projects
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/contacts"
+                            className={({ isActive }) => (isActive ? "active" : "link")}
+                        >
+                            _contact-me
+                        </NavLink>
+
+                    </li>
                 </ul>
+
+                <Footer />
             </div>
         </div>
     );
