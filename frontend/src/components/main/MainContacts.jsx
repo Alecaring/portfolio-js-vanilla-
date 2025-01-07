@@ -14,11 +14,31 @@ const createContactRows = (rows) =>
     ));
 
 function MainContacts() {
-    const [formData, setFormData] = useState({
-        name: "Jhon Doe",
-        email: "user@gmail.com",
-        message: "Want you leave a message?",
-    });
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmitEmail = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch("http://localhost:8080/api/contacts/send-message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+            console.log(data);
+            setIsSuccess(data.success);
+
+        } catch (error) {
+            console.error("Errore durante l'invio:", error);
+            setResponse("Errore durante l'invio del messaggio");
+
+        }
+    }
+
     const [date, setDate] = useState("");
 
     useEffect(() => {
@@ -54,51 +74,64 @@ function MainContacts() {
                 <SidebarAbout />
             </div>
             <div className="main">
+
                 <div className="container-left-contacts">
                     <div className="top-nav">
                         <div className="cell-opened">
                             <div className="inner-cellOpend">
                                 <FontAwesomeIcon icon={faX} />
-                                <span>contacts</span>
+                                <span>_contacts</span>
                             </div>
                         </div>
                     </div>
                     <div className="form-contacts">
-                        <form action="/">
-                            {["name", "email", "message"].map((field) => (
-                                <div key={field}>
-                                    <label htmlFor={field}>_{field}:</label>
-                                    {field === "message" ? (
-                                        <textarea
-                                            onChange={handleChange}
-                                            value={formData[field]}
-                                            name={field}
-                                            id={field}
-                                            placeholder={`_${field}...`}
-                                            cols="3"
-                                        ></textarea>
-                                    ) : (
-                                        <input
-                                            onChange={handleChange}
-                                            value={formData[field]}
-                                            type={field === "email" ? "email" : "text"}
-                                            id={field}
-                                            name={field}
-                                            placeholder={field === "name" ? "Jhon Doe" : "user@gmail.com"}
-                                        />
-                                    )}
+                        {isSuccess ?
+                            (
+                                <div className="container-response-success">
+                                    <h1>Thank you! 🤘</h1>
+                                    <p>Your message has been accepted. You will recieve answer really soon!</p>
+                                    <button  onClick={() => setIsSuccess(false)}>send-new-message</button>
                                 </div>
-                            ))}
-                            <button type="submit">submit-message</button>
-                        </form>
+                            ) : (
+
+                                <form onSubmit={handleSubmitEmail}>
+                                    {["name", "email", "message"].map((field) => (
+                                        <div key={field}>
+                                            <label htmlFor={field}>_{field}:</label>
+                                            {field === "message" ? (
+                                                <textarea
+                                                    onChange={handleChange}
+                                                    value={formData[field]}
+                                                    name={field}
+                                                    id={field}
+                                                    placeholder={`_${field}...`}
+                                                    cols="3"
+                                                ></textarea>
+                                            ) : (
+                                                <input
+                                                    onChange={handleChange}
+                                                    value={formData[field]}
+                                                    type={field === "email" ? "email" : "text"}
+                                                    id={field}
+                                                    name={field}
+                                                    placeholder={field === "name" ? "Jhon Doe" : "user@gmail.com"}
+                                                />
+                                            )}
+                                        </div>
+                                    ))}
+                                    <button type="submit">submit-message</button>
+                                </form>
+                            )
+                        }
                     </div>
                 </div>
+
                 <div className="container-right-contacts">
                     <div className="top-nav">
                         <div className="cell-opened">
                             <div className="inner-cellOpend">
                                 <FontAwesomeIcon icon={faX} />
-                                <span>contacts</span>
+                                <span>_preview-contacts</span>
                             </div>
                         </div>
                     </div>

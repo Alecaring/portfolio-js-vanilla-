@@ -50,6 +50,33 @@
             align-items: center;
             justify-content: center;
 
+            .container-response-success {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    text-align: center;
+                    width: 75%;
+                    color: gray;
+                    font-size: 1.3rem;
+                }
+
+                button {
+                    padding: .5rem 1rem;
+                    border: none;
+                    margin-top: 1rem;
+                    background-color: #6c91bd;
+                    border-radius: .5rem;
+                }
+            }
+
             form {
                 width: 60%;
                 display: flex;
@@ -226,6 +253,32 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                .container-response-success {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    h1 {
+                        font-size: 1.6rem;
+                    }
+
+                    p {
+                        text-align: center;
+                        width: 75%;
+                        color: gray;
+                        font-size: 1rem;
+                    }
+
+                    button {
+                        padding: .5rem 1rem;
+                        border: none;
+                        background-color: #6c91bd;
+                        border-radius: .5rem;
+                    }
+                }
 
                 form {
                     width: 80%;
