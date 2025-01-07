@@ -30,7 +30,6 @@ db.user = require('../models/user.model.js')(sequelize, Sequelize); // modello u
 db.role = require('../models/role.model.js')(sequelize, Sequelize); // modello ruoli
 db.project = require("../models/project.model.js")(sequelize, Sequelize); // modello progetti
 
-
 // relazioni tra tabelle
 db.role.belongsToMany(db.user, {
     through: "user_roles"
