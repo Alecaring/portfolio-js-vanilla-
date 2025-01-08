@@ -8,16 +8,18 @@ function MainHome() {
 
 
             <div className="container-left-home">
+                <img src="/backgroundBlurs.svg" alt="" />
                 <div className="inner-container">
                     <div className="top-sec">
                         <h3 className="starting-text">Hi all. I am</h3>
-                        <h1 className="name">Alessio Caringella</h1>
+                        <h1 className="name">Alessio <br /> Caringella</h1>
+
                         <h2 className="front-end text-blu-lilla">&gt; Front-end developer</h2>
                         <h2 className="back-end text-purple">&gt; Back-end developer</h2>
                     </div>
                     <div className="bottom-sec">
-                        <h4 className="text-blu-pietra">// complete game to continue</h4>
-                        <h4 className="text-blu-pietra">// you can also see it on my Github page</h4>
+                        <h4 className="text-blu-pietra mobile-to-hide">// complete game to continue</h4>
+                        <h4 className="text-blu-pietra">// you can also see my Github page</h4>
                         <h5><span className="text-blu-lilla">const </span><span className="text-turchese-chiaro">githublink </span>= <a className="text-terracotta-chiara" href="#">"https://github.com/Alecaring"</a></h5>
                     </div>
                 </div> 
