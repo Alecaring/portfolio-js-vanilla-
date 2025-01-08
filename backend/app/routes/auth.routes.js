@@ -1,4 +1,4 @@
-const { verifySignUp } = require("../middleware");
+const { verifySignUp, authJwt } = require("../middleware");
 const controller = require("../controllers/auth.controller");
 
 const router = require("express").Router();
@@ -15,19 +15,10 @@ router.post("/signin", controller.signin);
 
 router.post("/signout", controller.signout);
 
+router.get("/verify-token", authJwt.verifyToken, (req, res) => {
+    res.status(200).json({ message: 'Token valido' });
+  });
+
 
 
 module.exports = router;
-
-
-
-// module.exports = function (app) {
-//     app.use(function (req, res, next) {
-//         res.header(
-//             "Access-Control-Allow-Headers",
-//             "Origin, Content-Type, Accept"
-//         );
-//         next();
-//     });
-
-// };

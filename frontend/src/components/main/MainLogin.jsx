@@ -30,7 +30,7 @@ function MainLogin() {
         // Simula il login (qui puoi aggiungere una validazione o un'API call)
         if (username && password) {
             login({ username, password }); // Passa i dati del login
-            navigate("/admin"); // Reindirizza all'area admin
+            // navigate("/admin"); // Reindirizza all'area admin
         } else {
             alert("Inserisci username e password validi.");
         }

@@ -22,7 +22,7 @@ function Navbar({ ownerName }) {
     // }, [])
 
     return (
-        <div className="container-navbar text-white">
+        <header className="container-navbar text-white">
             <div className="inner-container-name">
                 <NavLink to={isAuth ? "/admin" : "/"} end>
                     {ownerName}
@@ -117,7 +117,7 @@ function Navbar({ ownerName }) {
 
                 <Footer />
             </div>
-        </div>
+        </header>
     );
 }
 

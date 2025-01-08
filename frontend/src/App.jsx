@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home';
 import AboutPage from './pages/About';
-import ProjectsPage from './pages/Projects';
+import { lazy, useState } from 'react';
+const ProjectsPage = lazy(() => import('./pages/Projects'))
+// import ProjectsPage from './pages/Projects';
 import ContactsPage from './pages/Contacts';
-import { useState } from 'react';
 import LogIn from './pages/LogIn';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from "./components/ProtectedRoute";

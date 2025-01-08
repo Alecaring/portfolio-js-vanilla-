@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../../scss/partials/mainAbout.scss";
-import BaseMainDiv2 from "./common/BaseMainDiv2";
 import SidebarAbout from './sidebars/SidebarAbout';
 import BornInItaly from "./common/about-content/BornINItaly";
 import WebDeveloper from "./common/about-content/WebDeveloper";
@@ -63,8 +62,6 @@ function MainAbout() {
             <div className="sidebar">
                 <SidebarAbout onItemClick={handleItemClick} />
             </div>
-
-
 
 
             <div className="main">

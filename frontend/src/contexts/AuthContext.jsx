@@ -6,10 +6,43 @@ const AuthContext = createContext();
 // Provider del contesto
 export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false); // Stato di autenticazione
+  const [validToken, setValidToken] = useState(isAuth);
+  const [loading, setLoading] = useState(true);
+
 
   // Funzione per eseguire il login
-  const login = () => {
-    setIsAuth(true);
+  const login = async ({ username, password }) => {
+    // setIsAuth(true);
+    try {
+      const response = await fetch("http://localhost:8080/api/auth/signin", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Errore HTTP: ${response.status}`); // Gestione errori HTTP
+      }
+
+      const result = await response.json();
+      console.log(result);
+
+      if (result.success) {
+        setIsAuth(true);
+      } else {
+        alert("Credenziali non valide");
+      };
+
+    } catch (error) {
+      console.error("errore nel log-in", error.message);
+
+    }
   };
 
   // Funzione per eseguire il logout
@@ -18,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuth, login, logout }}>
+    <AuthContext.Provider value={{ isAuth, setIsAuth, validToken, loading, setLoading, setValidToken, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

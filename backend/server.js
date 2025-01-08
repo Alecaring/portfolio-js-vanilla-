@@ -2,12 +2,18 @@ console.log("-------------------------------------------------------------------
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
+app.use(cookieParser());
 
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Origine del client
+  credentials: true // Consenti l'invio di cookie/credenziali
+}));
 /* for Angular Client (withCredentials) */
 // app.use(
 //   cors({
@@ -80,7 +86,7 @@ async function initial() {
     const user = await User.create({
       username: "Alessio_carigella",
       email: "caringella.alessio1306@gmail.com",
-      password: "Lycia2025", // Assicurati di crittografare la password
+      password: bcrypt.hashSync("Lycia2024", 8),
     });
 
     // Recupera il ruolo (ad esempio, 'admin') dal database
