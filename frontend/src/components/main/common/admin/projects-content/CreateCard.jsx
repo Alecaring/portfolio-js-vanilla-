@@ -1,7 +1,39 @@
 function CreateCard({ title, subTitle, image, icon, description, handleTitleChange, handleSubTitleChange, handleImageChange, handleIconChange, handleDescriptionChange }) {
+
+    const payload = {
+        title: title,
+        subtitle: subTitle,
+        image: image,
+        icon: icon,
+        description: description
+    };
+
+    const handleSubmitCreateNewCard = async (event) => {
+        event.preventDefault();
+
+        try {
+
+            const response = await fetch("http://localhost:8080/api/projects/create-new-card", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const message = await response.json();
+            console.log(message);
+
+        } catch (error) {
+            console.error("errore durante l'esecuzione della chiamata POST", error.message);
+
+        }
+    }
+
     return (
         <>
-            <form className="form-create-card-admin">
+            <form onSubmit={handleSubmitCreateNewCard} className="form-create-card-admin">
 
                 <h1>Create New Card</h1>
                 <div className="title-container">
@@ -60,7 +92,7 @@ function CreateCard({ title, subTitle, image, icon, description, handleTitleChan
                 </div>
 
                 <div className="button-card-create">
-                    <button>clicca</button>
+                    <button type="submit">clicca</button>
                 </div>
             </form>
         </>

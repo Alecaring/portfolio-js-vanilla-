@@ -33,6 +33,8 @@ function AdminMainProjects() {
         setSelectedActionAdminProjects(item);
     };
 
+    
+
     let formAdminProjectLeft;
     let previewAdminProjectRight;
 
@@ -94,7 +96,7 @@ function AdminMainProjects() {
             break;
     }
 
-    useEffect(() => {}, [selectedActionAdminProjects]);
+    useEffect(() => { }, [selectedActionAdminProjects]);
 
     return (
         <>
