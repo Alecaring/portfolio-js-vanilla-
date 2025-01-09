@@ -17,6 +17,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        border-left: .1px solid gray;
+        border-right: .1px solid gray;
+
 
         .top-nav {
             width: 100%;
@@ -155,7 +158,6 @@
     .container-right-main {
         width: 50%;
         height: 100%;
-        border: .1px solid rgb(129, 129, 129);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -499,20 +501,121 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 1rem;
-
-        .title-container,
-        .subtitle-container,
-        .image-container,
-        .icon-container,
+        gap: 1.5rem;
+        
+        
         .description-container {
             width: 70%;
             display: flex;
             flex-direction: column;
             gap: .5rem;
-
-            input, textarea {
+            
+            
+            textarea {
+                background-color: wheat;
                 padding: 1rem;
+                border-radius: .5rem;
+            }
+        }
+
+        .image-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            input {
+                display: none;
+            }
+
+            label {
+                width: 100%;
+                background-color: wheat;
+                border-radius: 0.5rem;
+                color: black;
+                display: flex;
+                align-items: center;
+                /* Per allineare verticalmente gli elementi */
+
+                p {
+                    width: 30%;
+                    padding: 1rem .5rem;
+                    background-color: rebeccapurple;
+                    display: inline-block;
+                    /* Inline-block per rispetto larghezza */
+                    border-radius: 0.5rem;
+                    font-size: .8rem;
+                    color: white;
+                    /* Allinea il testo centralmente */
+                }
+
+                .file-name {
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 70%;
+                    /* Larghezza esplicita */
+                    vertical-align: middle;
+                    text-align: center;
+                    /* Allinea il testo a sinistra */
+                    padding: 0 1rem;
+                    /* Per il testo ellittico */
+                    white-space: nowrap;
+                    /* Impedisce il ritorno a capo */
+                    text-overflow: ellipsis;
+                    /* Mostra i puntini di sospensione */
+                    font-size: 0.8rem;
+                    /* Dimensione font */
+                }
+            }
+
+        }
+
+        .title-container,
+        .subtitle-container,
+        .icon-container {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            border-radius: .5rem;
+            background-color: wheat;
+            
+            
+            input {
+                width: 70%;
+                background-color: transparent;
+                position: relative;
+                padding: 1rem;
+                border-radius: 0  .5rem .5rem 0;
+                border: none;
+                
+            }
+            
+            label {
+                border-radius: .5rem;
+                padding: 1rem .5rem;
+                font-size: 0.8rem;
+
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                background-color: #5509ba;
+            }
+
+        }
+
+        .button-card-create {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            button {
+                border: none;
+                background-color: rgb(226, 183, 103);
+                padding: .5rem 1rem;
                 border-radius: .5rem;
             }
         }
@@ -526,66 +629,66 @@
         height: auto;
         display: flex;
         border-right: none;
-    
+
     }
-    
+
     .main {
         width: 100%;
         height: auto;
         display: flex;
-    
+
         .container-left-main {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            
-    
+
+
             .top-nav {
                 display: none;
                 width: 100%;
                 border-bottom: .1px solid rgb(154, 154, 154);
-    
+
                 .cell-opened {
                     padding: .5rem 1.5rem;
                     border-right: .1px solid white;
                     display: inline-block;
                     height: 100%;
-    
+
                     .inner-cellOpend {
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
                         gap: .7rem;
-    
+
                         svg {
                             font-size: .7rem;
                             padding-top: .1rem;
                         }
-    
+
                     }
                 }
             }
-    
+
             .container-born-in-italy-left {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-    
+
                 .top-container {
                     width: 100%;
                     display: flex;
                     padding: 2rem;
                     border-bottom: .1px solid #828282;
-    
+
                     .container-image {
                         width: 30%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-    
+
                         img {
                             width: 100px;
                             height: 100px;
@@ -594,24 +697,24 @@
                             border: 5px solid wheat;
                         }
                     }
-    
+
                     .container-statistic {
                         width: 70%;
                         display: flex;
                         align-items: center;
                         justify-content: space-evenly;
-    
+
                         .inner-statistic {
                             display: flex;
                             align-items: center;
                             flex-direction: column;
-    
+
                             .nums {
                                 font-size: 1.8rem;
                                 font-weight: bold;
                                 color: wheat;
                             }
-    
+
                             .small-txt {
                                 font-size: 0.9rem;
                                 color: #ffffff;
@@ -619,12 +722,12 @@
                         }
                     }
                 }
-    
+
                 .bottom-top-container {
                     display: flex;
                     flex-direction: column;
                     padding: 2rem;
-    
+
                     .name {
                         width: 100%;
                         display: flex;
@@ -632,30 +735,30 @@
                         justify-content: center;
                         flex-direction: column;
                         gap: 1rem;
-    
+
                         h1 {
                             font-size: 1.5rem;
                             color: wheat;
                             font-weight: bold;
                         }
                     }
-    
+
                     .description {
                         width: 100%;
                         display: flex;
                         flex-direction: column;
                         gap: 1rem;
-    
+
                         .bio-section {
                             font-size: 1rem;
                             line-height: 1.6;
                             color: white;
                         }
-    
+
                         .button-container {
                             display: flex;
                             gap: 1rem;
-    
+
                             .button {
                                 padding: 0.8rem 1.5rem;
                                 font-size: 1rem;
@@ -665,7 +768,7 @@
                                 border-radius: 5px;
                                 cursor: pointer;
                                 transition: background-color 0.3s;
-    
+
                                 &:hover {
                                     background-color: #0056b3;
                                 }
@@ -674,9 +777,9 @@
                     }
                 }
             }
-    
+
         }
-    
+
         .container-right-main {
             display: none;
             width: 50%;
@@ -684,7 +787,7 @@
             border: none;
             align-items: center;
             justify-content: center;
-    
+
             .container-born-in-italy {
                 width: 80%;
                 display: flex;
@@ -696,7 +799,7 @@
                 margin: 20px;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             }
-    
+
             .vsc-header {
                 display: flex;
                 align-items: center;
@@ -705,31 +808,31 @@
                 border-bottom: 1px solid #444;
                 color: #d4d4d4;
             }
-    
+
             .vsc-header .dot {
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
                 margin-right: 8px;
             }
-    
+
             .vsc-header .dot.red {
                 background-color: #ff5f56;
             }
-    
+
             .vsc-header .dot.yellow {
                 background-color: #ffbd2e;
             }
-    
+
             .vsc-header .dot.green {
                 background-color: #27c93f;
             }
-    
+
             .vsc-header p {
                 margin: 0;
                 font-weight: bold;
             }
-    
+
             .vsc-editor {
                 background-color: #092336;
                 padding: 20px;
@@ -740,42 +843,42 @@
                 border-radius: 8px;
                 white-space: pre-wrap;
             }
-    
+
             .keyword {
                 color: #569cd6;
                 /* Blue for keywords */
             }
-    
+
             .variable {
                 color: #9cdcfe;
                 /* Light blue for variables */
             }
-    
+
             .operator {
                 color: #d4d4d4;
                 /* Gray for operators like = */
             }
-    
+
             .property {
                 color: #c586c0;
                 /* Purple for object properties */
             }
-    
+
             .string {
                 color: #ce9178;
                 /* Orange for strings */
             }
-    
+
             .punctuation {
                 color: #d4d4d4;
                 /* Gray for punctuation like {}, [] */
             }
-    
+
             pre {
                 line-height: 1.8;
                 margin: 0;
             }
-    
+
             .container-web-dev-skills {
                 width: 80%;
                 height: auto;
@@ -785,83 +888,83 @@
                 border-radius: 10px;
                 overflow: hidden;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
+
                 .vsc-header {
                     background-color: #252526;
                     display: flex;
                     align-items: center;
                     padding: 0.5rem 1rem;
-    
+
                     .dot {
                         width: 10px;
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;
-    
+
                         &.red {
                             background-color: #ff5f56;
                         }
-    
+
                         &.yellow {
                             background-color: #ffbd2e;
                         }
-    
+
                         &.green {
                             background-color: #27c93f;
                         }
                     }
-    
+
                     p {
                         margin-left: 10px;
                         color: #ccc;
                         font-size: 0.9rem;
                     }
                 }
-    
+
                 .vsc-editor {
                     padding: 1rem;
                     overflow-x: auto;
-    
+
                     pre {
                         font-size: 0.9rem;
                         line-height: 1.6;
-    
+
                         .php-tag {
                             color: #4ec9b0;
                         }
-    
+
                         .keyword {
                             color: #569cd6;
                         }
-    
+
                         .classname {
                             color: #4ec9b0;
                         }
-    
+
                         .variable {
                             color: #9cdcfe;
                         }
-    
+
                         .string {
                             color: #ce9178;
                         }
-    
+
                         .operator,
                         .punctuation {
                             color: #d4d4d4;
                         }
-    
+
                         .method {
                             color: #dcdcaa;
                         }
-    
+
                         .function {
                             color: #c586c0;
                         }
                     }
                 }
             }
-    
+
             $background-dark: #1e1e1e;
             $background-header: #252526;
             $text-color: #d4d4d4;
@@ -876,7 +979,7 @@
             $number-color: #b5cea8;
             $property-color: #4ec9b0;
             $punctuation-color: #d4d4d4;
-    
+
             .container-hard-skills {
                 width: 80%;
                 background-color: $background-dark;
@@ -884,7 +987,7 @@
                 font-family: "Courier New", Courier, monospace;
                 padding: 1rem;
                 border-radius: 8px;
-    
+
                 .vsc-header {
                     display: flex;
                     align-items: center;
@@ -892,66 +995,66 @@
                     padding: 0.5rem;
                     background-color: $background-header;
                     border-bottom: 1px solid $border-color;
-    
+
                     .dot {
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
-    
+
                         &.red {
                             background-color: $dot-red;
                         }
-    
+
                         &.yellow {
                             background-color: $dot-yellow;
                         }
-    
+
                         &.green {
                             background-color: $dot-green;
                         }
                     }
-    
+
                     p {
                         color: $text-color;
                         margin: 0;
                     }
                 }
-    
+
                 .vsc-editor {
                     padding: 1rem;
                     background-color: $background-dark;
                     border-radius: 4px;
-    
+
                     .comment {
                         color: $comment-color;
                     }
-    
+
                     .keyword {
                         color: $keyword-color;
                     }
-    
+
                     .variable {
                         color: $variable-color;
                     }
-    
+
                     .string {
                         color: $string-color;
                     }
-    
+
                     .number {
                         color: $number-color;
                     }
-    
+
                     .property {
                         color: $property-color;
                     }
-    
+
                     .punctuation {
                         color: $punctuation-color;
                     }
                 }
             }
-    
+
             .container-love-technology {
                 width: 100%;
                 background-color: #1e1e1e;
@@ -959,7 +1062,7 @@
                 font-family: "Courier New", Courier, monospace;
                 padding: 1rem;
                 border-radius: 8px;
-    
+
                 .vsc-header {
                     display: flex;
                     align-items: center;
@@ -967,31 +1070,31 @@
                     padding: 0.5rem;
                     background-color: #252526;
                     border-bottom: 1px solid #333;
-    
+
                     .dot {
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
-    
+
                         &.red {
                             background-color: #f28b82;
                         }
-    
+
                         &.yellow {
                             background-color: #fbbc04;
                         }
-    
+
                         &.green {
                             background-color: #34a853;
                         }
                     }
-    
+
                     p {
                         color: #d4d4d4;
                         margin: 0;
                     }
                 }
-    
+
                 .vsc-editor {
                     padding: 1rem;
                     background-color: #1e1e1e;
@@ -1000,23 +1103,23 @@
                     justify-content: center;
                     align-items: center;
                 }
-    
+
                 canvas {
                     border: 1px solid #333;
                     border-radius: 4px;
                 }
             }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
         }
-    
+
         .form-create-card-admin {
             width: 100%;
             height: 100%;
@@ -1025,7 +1128,7 @@
             justify-content: center;
             flex-direction: column;
             gap: 1rem;
-    
+
             .title-container,
             .subtitle-container,
             .image-container,
@@ -1035,8 +1138,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: .5rem;
-    
-                input, textarea {
+
+                input,
+                textarea {
                     padding: 1rem;
                     border-radius: .5rem;
                 }

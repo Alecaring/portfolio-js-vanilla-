@@ -1,8 +1,9 @@
 function CreateCard({ title, subTitle, image, icon, description, handleTitleChange, handleSubTitleChange, handleImageChange, handleIconChange, handleDescriptionChange }) {
     return (
         <>
-            <div className="form-create-card-admin">
+            <form className="form-create-card-admin">
 
+                <h1>Create New Card</h1>
                 <div className="title-container">
                     <label htmlFor="title">Title</label>
                     <input
@@ -23,16 +24,6 @@ function CreateCard({ title, subTitle, image, icon, description, handleTitleChan
                     />
                 </div>
 
-                <div className="image-container">
-                    <label htmlFor="image">Image URL</label>
-                    <textarea
-                        type="text"
-                        id="image"
-                        value={image}
-                        onChange={handleImageChange}
-                    />
-                </div>
-
                 <div className="icon-container">
                     <label htmlFor="icon">Icon</label>
                     <input
@@ -40,6 +31,21 @@ function CreateCard({ title, subTitle, image, icon, description, handleTitleChan
                         id="icon"
                         value={icon}
                         onChange={handleIconChange}
+                    />
+                </div>
+
+
+
+                <div className="image-container">
+                    <label htmlFor="image">
+                        <p>Upload Image</p>
+                        <span className="file-name">{image}</span>
+                    </label>
+                    <input
+                        id="image"
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
                     />
                 </div>
 
@@ -52,7 +58,11 @@ function CreateCard({ title, subTitle, image, icon, description, handleTitleChan
                         onChange={handleDescriptionChange}
                     />
                 </div>
-            </div>
+
+                <div className="button-card-create">
+                    <button>clicca</button>
+                </div>
+            </form>
         </>
     )
 }

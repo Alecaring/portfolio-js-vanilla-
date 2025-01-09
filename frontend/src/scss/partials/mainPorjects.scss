@@ -54,7 +54,7 @@
         .card-image-cont {
             position: relative;
             border-bottom: 1px solid grey;
-            height: 15vh;
+            height: 25vh;
 
             img {
                 width: 100%;
@@ -87,7 +87,6 @@
                 -webkit-box-orient: vertical;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                height: 5vh;
                 margin-bottom: 1.5rem;
                 display: flex;
                 align-items: center;

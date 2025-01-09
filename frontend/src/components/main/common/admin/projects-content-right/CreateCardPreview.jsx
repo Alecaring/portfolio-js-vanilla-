@@ -1,4 +1,4 @@
-function CreateCardPreview({title, subTitle, image, icon, description}) {
+function CreateCardPreview({ title, subTitle, image, icon, description }) {
     return (
         <>
             <div className="card">
@@ -8,7 +8,7 @@ function CreateCardPreview({title, subTitle, image, icon, description}) {
                 </div>
                 <div className="card-main">
                     <div className="card-image-cont">
-                        <img src={image} alt="project" />
+                        {image && <img src={image} alt="Preview" />}
                         <span className="ref-icon">{icon}</span>
                     </div>
                     <div className="description">

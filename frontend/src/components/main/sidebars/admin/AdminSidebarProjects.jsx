@@ -1,6 +1,8 @@
+import "../../../../scss/partials/sidebars/adminSidebarProject.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faPlus, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+
 
 
 function AdminSidebarProjects({onAdminActionClick}) {
@@ -17,7 +19,7 @@ function AdminSidebarProjects({onAdminActionClick}) {
     };
 
     return (
-        <div className="container-sidebar-projects">
+        <div className="container-sidebar-projects-admin">
             <div className="main-folder">
                 <FontAwesomeIcon icon={faCaretDown} />
                 <p>__actions</p>

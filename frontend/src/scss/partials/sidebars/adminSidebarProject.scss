@@ -1,0 +1,26 @@
+.container-sidebar-projects-admin {
+    width: 20%;
+    height: 100%;
+
+    .main-folder {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: .1px solid grey;
+        padding: .5rem 1.5rem;
+        gap: 1rem;
+
+    }
+
+    ul {
+        width: 100%;
+        padding: 1rem .5rem;
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            gap: 1rem;
+        }
+    }
+}
