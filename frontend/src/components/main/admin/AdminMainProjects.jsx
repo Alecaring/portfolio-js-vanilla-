@@ -65,6 +65,7 @@ function AdminMainProjects() {
             );
             break;
         case "_edit-card":
+            
         case "_delete-card":
             formAdminProjectLeft = "";
             previewAdminProjectRight = "";

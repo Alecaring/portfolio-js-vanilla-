@@ -16,7 +16,10 @@ module.exports = (sequelize, Sequelize) => {
             },
             description: {
                 type: Sequelize.STRING
-            }
+            },
+            tags: [
+                
+            ]
         }
     );
     return Project;

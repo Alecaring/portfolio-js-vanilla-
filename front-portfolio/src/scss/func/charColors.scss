@@ -1,0 +1,18 @@
+$colors: (
+    white: white,
+    blu-lilla: #4e5bce,
+    purple: purple,
+    blu-pietra: #57728c,
+    turchese-chiaro: #43d7ac,
+    terracotta-chiara: #c37e78,
+    bordeaux: rgb(150, 57, 57),
+    orange: orange,
+    dark-blue: #001627,
+);
+
+@each $color, $value in $colors {
+    .text-#{$color} {
+        color: $value;
+    }
+};
+

@@ -1,0 +1,49 @@
+@import "./func/bgColors.scss";
+@import "./func/charColors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
+}
+.app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.root {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  height: 97vh;
+  border: 1px solid rgba(128, 128, 128, 0.653);
+  border-radius: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    // background-color: #001627;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 1rem;
+  }
+}
