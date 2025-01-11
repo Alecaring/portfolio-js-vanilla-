@@ -1,21 +1,46 @@
-import { createContext, useContext, useState } from "react";
-
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [isLight, setIsLight] = useState(true);
+    const [themes, setThemes] = useState(() => {
+        // Carica il tema iniziale da localStorage
+        const storedTheme = localStorage.getItem("theme");
+        return storedTheme
+            ? JSON.parse(storedTheme)
+            : {
+                  _curTheme: "light",
+                  bgThemeSecondary: "bg-white",
+                  bgThemeMain: "bg-white",
+                  txtTheme: "text-dark-blue",
+              };
+    });
 
     const handleLightApp = () => {
-        setIsLight(prevIsLight => !prevIsLight);
-        console.log(isLight);
-    }
+        const newTheme = themes._curTheme === "light" ? "dark" : "light";
+
+        const updatedThemes = {
+            ...themes,
+            _curTheme: newTheme,
+            bgThemeSecondary: newTheme === "light" ? "bg-white" : "bg-black",
+            bgThemeMain: newTheme === "light" ? "bg-white" : "bg-dark-blue",
+            txtTheme: newTheme === "light" ? "text-dark-blue" : "text-white",
+        };
+
+        setThemes(updatedThemes);
+        localStorage.setItem("theme", JSON.stringify(updatedThemes));
+    };
+
+    useEffect(() => {
+        console.log(`Tema corrente: ${themes._curTheme}`);
+        console.log(themes);
+    }, [themes]);
 
     return (
-        <ThemeContext.Provider value={{ isLight, handleLightApp }}>
+        <ThemeContext.Provider value={{ themes, handleLightApp }}>
             {children}
         </ThemeContext.Provider>
     );
-}
+};
 
 export const setTheme = () => useContext(ThemeContext);

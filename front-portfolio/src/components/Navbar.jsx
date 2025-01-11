@@ -10,7 +10,9 @@ import { setTheme } from "../contexts/LightContext";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  const { isLight, handleLightApp } = setTheme();
+
+  const { themes, handleLightApp } = setTheme();
+
   const [navLinks, setNavLinks] = useState([
     {
       id: 1,
@@ -50,35 +52,35 @@ const Navbar = () => {
 
   return (
 
-    <header className="container-navbar">
-      <div className="inner-container-name">
+    <header className="container-navbar-desktop">
+      <div className="inner-container-name-cell">
         <NavLink to={user ? "/admin" : "/"} end>
           {user ? "_admin-dashboard" : "_alessio-caringella"}
         </NavLink>
       </div>
       <div className="inner-container-links">
         <div className="links-left">
-          <ul>
+          <ul className="list-group">
             {navLinks.filter(
               (link) => link.left
             ).map((s) => (
-              <li key={s.id}>
+              <li className="list-items-left" key={s.id}>
                 <NavLink to={s.to} className={s.className} end>{s.content}</NavLink>
               </li>
             ))}
           </ul>
         </div>
         <div className="links-right">
-          <ul>
-            <li>
+          <ul className="list-group">
+            <li className="list-items-right">
               <button onClick={handleLightApp}>
-                <FontAwesomeIcon className={`${isLight ? "text-dark-blue" : "text-white"}`} icon={isLight ? faMoon : faSun} />
+                <FontAwesomeIcon className={`${themes.txtTheme} transition-02s`} icon={themes._curTheme == "light" ? faMoon : faSun} />
               </button>
             </li>
             {navLinks.filter(
               (link) => !link.left
             ).map((s) => (
-              <li key={s.id}>
+              <li className="list-items-right" key={s.id}>
                 <NavLink to={s.to} className={s.className} end>{s.content}</NavLink>
               </li>
             ))}
@@ -91,7 +93,7 @@ const Navbar = () => {
       <div className="container-hamburger-menu" >
         <FontAwesomeIcon icon={faBars} onClick={openMenu} />
       </div>
-      <div className={isMenuOpen ? "dropdown-menu-open" : "dropdown-menu"}>
+      <div className={isMenuOpen ? `dropdown-menu-open ${themes.bgThemeMain} transition-02s` : `dropdown-menu`}>
 
         <ul className="list-group-navbar">
           {navLinks.map((s) => (

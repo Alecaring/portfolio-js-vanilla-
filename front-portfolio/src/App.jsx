@@ -7,12 +7,12 @@ import { setTheme } from "./contexts/LightContext";
 
 const App = () => {
   const { user } = useAuth();
-  const { isLight } = setTheme();
+  const { themes } = setTheme();
 
   return (
     <Router>
-      <div className={`app ${isLight ? "bg-white" : "bg-black"}`}>
-        <div className={`root ${isLight ? "bg-white text-dark-blue" : "bg-dark-blue text-white"}`}>
+      <div className={`app ${themes.bgThemeSecondary} transition-02s`}>
+        <div className={`root ${themes.bgThemeMain} ${themes.txtTheme} transition-02s`}>
           {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
         </div>
       </div>
