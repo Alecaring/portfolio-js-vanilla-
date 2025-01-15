@@ -18,16 +18,22 @@ export const ProjectProvider = ({ children }) => {
         { id: 3, icon: faCss3Alt, name: "CSS" },
         { id: 4, icon: faVuejs, name: "Vue" },
     ]);
+    const [totalPages, setTotalPages] = useState("");
+    const [currentPage, setCurrentPage] = useState("");
 
 
-    const fetchData = async () => {
+    const fetchData = async (page = 1) => {
 
         try {
 
-            const resp = await fetch("http://localhost:8080/api/projects/get");
+            const resp = await fetch(`http://localhost:8080/api/projects/get?page=${page}&limit=3`);
             const result = await resp.json();
             console.log(result);
-            setProjectData(result);
+
+            setProjectData(result.data);
+            setTotalPages(result.totalPages);
+            setCurrentPage(result.currentPage);
+
             setLoader(false);
 
         } catch (err) {
@@ -42,7 +48,7 @@ export const ProjectProvider = ({ children }) => {
 
         }
     }
-    
+
 
     const filteredProjects = projectData.filter(project =>
         selectedFilters.length === 0 || project.tags.some(tag => selectedFilters.includes(tag))
@@ -79,7 +85,10 @@ export const ProjectProvider = ({ children }) => {
             setCheckedItems,
             handleCheckboxChange,
             handleSubmitFilter,
-            toggleOpenFilter
+            toggleOpenFilter,
+            totalPages,
+            currentPage,
+            setCurrentPage,
         }}>
             {children}
         </ProjectContext.Provider>

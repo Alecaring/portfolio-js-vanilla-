@@ -10,16 +10,20 @@ import CommonSidebarLayout from "../components/layouts/CommonSidebarLayout";
 // componete :: rende l'icona
 import Icon from "../components/Icon";
 // icona :: fortawesome
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 // contesto :: provider
 import { useProject } from "../contexts/ProjectContext";
 // scss :: stile
 import "../scss/partials/project.scss";
 import { useNavigate } from "react-router-dom";
+import { faReact } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 const Project = () => {
 
-    
+
     const {
         // () => {} :: func;
         fetchData, // chiamata api al server GET;
@@ -43,6 +47,10 @@ const Project = () => {
         handleCheckboxChange, // aggiorna lo stato di checkedItems;
         // () => {} :: func;
         handleSubmitFilter, // permette di avviare l'azione per filtrare;
+
+        totalPages,
+        currentPage,
+        setCurrentPage
     } = useProject(); // contesto
 
     /**
@@ -54,17 +62,33 @@ const Project = () => {
      * recupera i dati dei progetti
      */
     useEffect(() => {
-        fetchData(); // chiamata in GET
-    }, []);
+        fetchData(currentPage); // chiamata in GET
+    }, [currentPage]);
 
     const navigate = useNavigate();
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= totalPages) {
+          setCurrentPage(newPage);
+        }
+      };
 
     const handleShowProject = (repoName) => {
         navigate(`/editor/${repoName}`);
     }
 
+    const iconMap = {
+        faReact: faReact,
+    }
+
+    const getIcon = (iconName) => {
+        return iconMap[iconName] || null;
+    }
+
     return (
         <section className="container-main">
+
+            {/* sidebar */}
             <CommonSidebarLayout>
                 <div className="container-sidebar-projects">
                     <p className="name_page_projects">_projects</p>
@@ -89,8 +113,12 @@ const Project = () => {
                     </ul>
                 </div>
             </CommonSidebarLayout>
+
+            {/* sezione principale */}
             <CommonSectionLayout>
                 <div className="main-projects-section">
+                    <div className="card-container">
+
                     {loader ? (
                         <h1>Loading...</h1>
                     ) : errors && errors.message ? (
@@ -105,7 +133,8 @@ const Project = () => {
                                 <div className="card-main">
                                     <div className="card-image-cont">
                                         <img src={s.image} alt={s.title} />
-                                        <span className="ref-icon">{s.icon}</span>
+                                        <Icon icon={getIcon(s.icon)} className="ref-icon" />
+                                        {/* <span className="ref-icon">{s.icon}</span> */}
                                     </div>
                                     <div className="description">
                                         <p>{s.description}</p>
@@ -117,9 +146,19 @@ const Project = () => {
                     ) : (
                         <h1>No projects found.</h1>
                     )}
-
+                    </div>
+                    <div className="pagination-container">
+                        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                            <Icon icon={faCaretLeft} />
+                        </button>
+                        <span>Page {currentPage} of {totalPages}</span>
+                        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                            <Icon icon={faCaretRight} />
+                        </button>
+                    </div>
                 </div>
             </CommonSectionLayout>
+
         </section>
     );
 };

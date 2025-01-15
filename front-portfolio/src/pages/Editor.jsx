@@ -20,6 +20,7 @@ const FileExplorer = () => {
 
   // Leggi il parametro "path" dall'URL (se presente)
   const currentPath = new URLSearchParams(location.search).get('path') || '';
+  const apiUrl = import.meta.env.VITE_GITHUB_TOKEN;
 
   const loadDirectory = async (path = '') => {
     setLoading(true);
@@ -29,7 +30,7 @@ const FileExplorer = () => {
       const response = await fetch(
         `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`, {
         headers: {
-          Authorization: `token ALESSIO_TOKEN`,
+          Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
         }
       }
       );

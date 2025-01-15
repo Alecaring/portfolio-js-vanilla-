@@ -113,187 +113,137 @@
 .main-projects-section {
     width: 100%;
     height: 100%;
-    @include flex.flex(_, _, _, wrap, 3rem);
-    padding: 5rem;
     overflow: auto;
 
     @include media.media("sm") {
-        padding: 3rem 2rem;
         overflow: visible;
-
     }
 
-    .card {
-        width: calc(100% / 3 - 3rem);
-        height: auto;
-        @include flex.flex(column, _, _, _, 1rem);
+    .card-container {
+        width: 100%;
+        height: 80%;
+        padding: 3rem;
+        @include flex.flex(_, center, center, wrap, 3rem);
 
         @include media.media("sm") {
-            width: 100%;
+            padding: 3rem 2rem;
         }
 
-        .card-header {
-            padding: 0 1rem;
-            @include flex.flex(_, _, center, _, 1rem);
-
-            p {
-                color: blue;
+        .card {
+            width: calc(100% / 3 - 3rem);
+            height: auto;
+            @include flex.flex(column, _, _, _, 1rem);
+    
+            @include media.media("sm") {
+                width: 100%;
             }
-
-            span {
-                color: grey;
-            }
-        }
-
-        .card-main {
-            border: .1px solid grey;
-            width: 100%;
-            background-color: rgb(0, 0, 0);
-            border-radius: 2rem;
-            overflow: hidden;
-            @include flex.flex(column, _, _, _, _);
-
-
-
-            .card-image-cont {
-                position: relative;
-                border-bottom: 1px solid grey;
-                height: 25vh;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-
-                }
-
-                .ref-icon {
-                    position: absolute;
-                    top: 15%;
-                    right: 7%;
-                    width: 35px;
-                    height: 35px;
-                    border-radius: .5em;
-                    @include flex.flex(_, center, center, _, _);
-                    background-color: aqua;
-                }
-            }
-
-            .description {
-                padding: 1.5rem 2rem;
-                font-size: .8rem;
-
+    
+            .card-header {
+                padding: 0 1rem;
+                @include flex.flex(_, _, center, _, 1rem);
+    
                 p {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    margin-bottom: 1.5rem;
-                    @include flex.flex(_, _, center, _, _);
-
-                    @include media.media("sm") {
-                        height: 5vh;
-                    }
-
+                    color: blue;
                 }
-
-                button {
-                    padding: .5rem 1rem;
-                    background-color: grey;
-                    color: white;
-                    border: none;
-                    border-radius: .5rem;
+    
+                span {
+                    color: grey;
+                }
+            }
+    
+            .card-main {
+                border: .1px solid grey;
+                width: 100%;
+                background-color: rgb(0, 0, 0);
+                border-radius: 2rem;
+                overflow: hidden;
+                @include flex.flex(column, _, _, _, _);
+    
+    
+    
+                .card-image-cont {
+                    position: relative;
+                    border-bottom: 1px solid grey;
+                    height: 30vh;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+    
+                    }
+    
+                    .ref-icon {
+                        position: absolute;
+                        top: 15%;
+                        right: 7%;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: .5rem;
+                        @include flex.flex(_, center, center, _, _);
+                        background-color: rgb(0, 106, 255);
+                        padding: .3rem;
+                    }
+                }
+    
+                .description {
+                    padding: 1.5rem 2rem;
+                    font-size: .8rem;
+    
+                    p {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        margin-bottom: 1.5rem;
+                        @include flex.flex(_, _, center, _, _);
+    
+                        @include media.media("sm") {
+                            height: 5vh;
+                        }
+    
+                    }
+    
+                    button {
+                        padding: .5rem 1rem;
+                        background-color: grey;
+                        color: white;
+                        border: none;
+                        border-radius: .5rem;
+                    }
                 }
             }
         }
     }
-}
 
 
-.card {
+    .pagination-container {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        button {
+           padding: 5px 10px;
+           cursor: pointer;
+           border: none;
+           width: 30px;
+           height: 30px;
+           border-radius: 50%;
+           font-size: 1.3rem;
 
-    // width: 50%;
-    // height: auto;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 1rem;
-
-    // .card-header {
-    //     padding: 0 1rem;
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 1rem;
-
-    //     p {
-    //         color: blue;
-    //     }
-
-    //     span {
-    //         color: grey;
-    //     }
-    // }
-
-    // .card-main {
-    //     border: .1px solid grey;
-    //     width: 100%;
-    //     background-color: rgb(0, 0, 0);
-    //     border-radius: 2rem;
-    //     overflow: hidden;
-    //     display: flex;
-    //     flex-direction: column;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+    }
 
 
+    .pagination button:disabled {
+        background-color: #f0f0f0;
+        cursor: not-allowed;
+    }
 
-    //     .card-image-cont {
-    //         position: relative;
-    //         border-bottom: 1px solid grey;
-    //         height: 25vh;
-
-    //         img {
-    //             width: 100%;
-    //             height: 100%;
-    //             object-fit: cover;
-
-    //         }
-
-    //         .ref-icon {
-    //             position: absolute;
-    //             top: 15%;
-    //             right: 7%;
-    //             width: 35px;
-    //             height: 35px;
-    //             border-radius: .5em;
-    //             display: flex;
-    //             align-items: center;
-    //             justify-content: center;
-    //             background-color: aqua;
-    //         }
-    //     }
-
-    //     .description {
-    //         padding: 1.5rem 2rem;
-    //         font-size: .8rem;
-
-    //         p {
-    //             display: -webkit-box;
-    //             -webkit-line-clamp: 3;
-    //             -webkit-box-orient: vertical;
-    //             text-overflow: ellipsis;
-    //             overflow: hidden;
-    //             margin-bottom: 1.5rem;
-    //             display: flex;
-    //             align-items: center;
-
-    //         }
-
-    //         button {
-    //             padding: .5rem 1rem;
-    //             background-color: grey;
-    //             color: white;
-    //             border: none;
-    //             border-radius: .5rem;
-    //         }
-    //     }
-    // }
 }

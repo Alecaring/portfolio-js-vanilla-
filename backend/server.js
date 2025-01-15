@@ -78,7 +78,43 @@ async function initial() {
       title: "Whatsapp",
       subtitle: "_ui-ux design",
       image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
-      icon: "R",
+      icon: "faReact",
+      description: "il progetto piu bello del mondo",
+      repositoryName: "Portfolio_App"
+    });
+    // Creazione di un progetto
+    await Project.create({
+      title: "Whatsapp",
+      subtitle: "_ui-ux design",
+      image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
+      icon: "faReact",
+      description: "il progetto piu bello del mondo",
+      repositoryName: "Portfolio_App"
+    });
+    // Creazione di un progetto
+    await Project.create({
+      title: "Whatsapp",
+      subtitle: "_ui-ux design",
+      image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
+      icon: "faReact",
+      description: "il progetto piu bello del mondo",
+      repositoryName: "Portfolio_App"
+    });
+    // Creazione di un progetto
+    await Project.create({
+      title: "Whatsapp",
+      subtitle: "_ui-ux design",
+      image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
+      icon: "faReact",
+      description: "il progetto piu bello del mondo",
+      repositoryName: "Portfolio_App"
+    });
+    // Creazione di un progetto
+    await Project.create({
+      title: "Whatsapp",
+      subtitle: "_ui-ux design",
+      image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
+      icon: "faReact",
       description: "il progetto piu bello del mondo",
       repositoryName: "Portfolio_App"
     });
