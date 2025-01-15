@@ -1,0 +1,323 @@
+@use "../mixin/flex.scss" as flex;
+@use "../mixin/media.scss" as media;
+
+.container-left-home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex.flex(_, flex-end, center, _, _);
+
+
+    img {
+        display: none;
+
+        @include media.media("sm") {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include flex.flex();
+            opacity: .7;
+        }
+    }
+
+    .inner-container {
+        width: 80%;
+        height: auto;
+        @include flex.flex(column, _, flex-start, _, 4rem);
+
+        @include media.media("sm") {
+            width: 90%;
+        }
+
+
+
+        .top-sec {
+            @include media.media("sm") {
+                @include flex.flex(column, _, _, _, 1rem);
+            }
+
+            .starting-text {
+                font-size: 1.2rem;
+                font-weight: 100;
+                padding-left: .3rem;
+            }
+
+            .name {
+                font-weight: 100;
+                font-size: 3rem;
+
+                @include media.media("sm") {
+                    line-height: 50px;
+                }
+            }
+
+            .front-end {
+                font-weight: 100;
+                font-size: 2rem;
+
+                @include media.media("sm") {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .back-end {
+                font-weight: 100;
+                font-size: 2rem;
+
+                @include media.media("sm") {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .bottom-sec {
+            @include flex.flex(column, _, _, _, 1rem);
+
+
+            .comment {
+                font-weight: 100;
+                font-size: 1.2rem;
+            }
+
+            .mobile-to-hide {
+                @include media.media("sm") {
+                    display: none;
+                }
+            }
+
+            h5 {
+                font-size: 1.2rem;
+
+                @include media.media("sm") {
+                    font-size: 1rem;
+                }
+
+            }
+        }
+    }
+}
+
+.container-right-home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex.flex(_, center, center, _, _);
+
+    @include media.media("sm") {
+        display: none;
+    }
+
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    .container-game {
+        position: relative;
+        width: 80%;
+        height: 60vh;
+        border: 1px solid black;
+        z-index: 100;
+        background: linear-gradient(45deg, rgba(23, 85, 83, 0.529), rgba(67, 217, 172, 0.374));
+        border-radius: 1rem;
+        @include flex.flex(_, space-between, center, _, _);
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            @include flex.flex(_, center, center, _, _);
+            position: absolute;
+            background-color: inherit;
+            font-size: .8rem;
+            font-weight: 100;
+            color: black;
+            border-radius: 50%;
+            box-shadow:
+                2px 2px 9px 3px rgba(0, 0, 0, 0.23),
+                0 0 4px rgba(0, 0, 0, 0.5),
+                inset 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Posizioni specifiche per ciascun cerchio */
+        .dot1 {
+            top: 20px;
+            left: 20px;
+        }
+
+        .dot2 {
+            top: 20px;
+            right: 20px;
+        }
+
+        .dot3 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .dot4 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .inner-game-container {
+            width: 50%;
+            height: 80%;
+            margin-left: 10%;
+            border-radius: 1rem;
+            @include flex.flex(column, space-between, flex-start, _, _);
+
+            .game-cell {
+                position: relative;
+                width: 250px;
+                height: 350px;
+                border: 1px solid white;
+                border-radius: 1rem;
+
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top: 60%;
+                    transform: translate(-50%, -50%);
+                    width: 70px;
+                }
+
+                .food {
+                    position: absolute;
+                    left: 38%;
+                    top: 20%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #43D9AD;
+                    flex-shrink: 0;
+                    border: 4px solid #c3f6e77f;
+                }
+            }
+
+            .game-button-start {
+                width: 100%;
+                height: 20%;
+                @include flex.flex(_, flex-start, flex-end, _, _);
+
+
+                button {
+                    padding: 1rem;
+                    background-color: #fea45f;
+                    border-radius: 1rem;
+                    color: black;
+                }
+            }
+        }
+
+        .inner-rules-container {
+            width: 50%;
+            height: 80%;
+            background-color: transparent;
+            margin-right: 10%;
+            @include flex.flex(column, space-between, flex-end, _, _);
+
+
+            .main-container-to-flex {
+                @include flex.flex(column, _, flex-end, _, _);
+                background-color: transparent;
+
+                .rules {
+                    width: 90%;
+                    background-color: rgba(0, 0, 0, 0.185);
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+
+                    .comment {
+                        background-color: transparent;
+                    }
+
+                    .keyboard-arrows {
+                        border: none;
+                        background-color: transparent;
+
+
+                        .cont-up {
+                            @include flex.flex(_, center, center, _, _);
+                            background-color: inherit;
+                            padding-top: 2rem;
+                            padding-bottom: .1rem;
+
+                            .arrows {
+                                width: calc(100% / 3 - .1rem);
+                                background-color: black;
+                                border-radius: .5rem;
+                                padding: .6rem 0;
+                                color: white;
+                            }
+                        }
+
+                        .cont-down {
+                            @include flex.flex(_, center, center, _, .1rem);
+                            background-color: inherit;
+
+                            .arrows {
+                                width: calc(100% / 3 - .1rem);
+                                background-color: black;
+                                border-radius: .5rem;
+                                padding: .6rem 0;
+                                color: white;
+
+                            }
+                        }
+                    }
+
+                }
+
+                .container-food-left {
+                    width: 90%;
+                    // min-width: 150px;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    background-color: transparent;
+                    //overflow-x: auto;
+
+                    .comment {
+                        background-color: transparent;
+                    }
+
+                    .inner-food-container {
+                        @include flex.flex(_, center, center, nowrap, 1rem);
+                        width: 220px;
+                        height: 50px;
+                        margin-top: 1rem;
+                        padding: 0 1rem;
+                        overflow-y: auto;
+                        border-radius: 1rem;
+                        box-shadow: inset -8px -8px 16px rgba(255, 255, 255, 0.298), inset 8px 8px 16px rgba(108, 108, 108, 0.372);
+                    }
+
+                    .food {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: #43D9AD;
+                        flex-shrink: 0;
+                        border: 4px solid #c3f6e77f;
+                    }
+
+                }
+            }
+
+            button {
+                border: 1px solid white;
+                padding: 1rem;
+                background-color: transparent;
+                border-radius: 1rem;
+            }
+        }
+    }
+}

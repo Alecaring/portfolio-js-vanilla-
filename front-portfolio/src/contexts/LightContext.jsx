@@ -12,6 +12,7 @@ export const ThemeProvider = ({ children }) => {
                   _curTheme: "light",
                   bgThemeSecondary: "bg-white",
                   bgThemeMain: "bg-white",
+                  bgThemeInput: "bg-lightGrey",
                   txtTheme: "text-dark-blue",
               };
     });
@@ -24,6 +25,7 @@ export const ThemeProvider = ({ children }) => {
             _curTheme: newTheme,
             bgThemeSecondary: newTheme === "light" ? "bg-white" : "bg-black",
             bgThemeMain: newTheme === "light" ? "bg-white" : "bg-dark-blue",
+            bgThemeInput: newTheme === "light" ? "bg-lightGrey" : "bg-purple",
             txtTheme: newTheme === "light" ? "text-dark-blue" : "text-white",
         };
 

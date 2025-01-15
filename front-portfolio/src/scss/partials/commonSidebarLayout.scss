@@ -1,0 +1,13 @@
+@use "../mixin/flex.scss" as flex;
+@use "../mixin/media.scss" as media;
+@import "../variables/var.scss";
+
+
+.common-sidebar-layout {
+    width: $_20;
+    height: $_100;
+
+    @include media.media("sm") {
+        display: $none;
+    }
+}

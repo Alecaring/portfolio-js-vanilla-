@@ -17,9 +17,9 @@ module.exports = (sequelize, Sequelize) => {
             description: {
                 type: Sequelize.STRING
             },
-            tags: [
-                
-            ]
+            repositoryName: {
+                type: Sequelize.STRING
+            }
         }
     );
     return Project;

@@ -1,0 +1,51 @@
+@use "../mixin/flex.scss" as flex;
+@use "../mixin/media.scss" as media;
+@import "../variables/var.scss";
+
+.container-main {
+    width: $_100;
+    height: $_86;
+    @include flex.flex();
+
+    @include media.media("sm") {
+        height: $_90;
+    }
+
+}
+
+.common-section-layout {
+    width: $_80;
+    height: $_100;
+    border-left: .1px solid rgb(131, 131, 131);
+    @include flex.flex();
+
+    @include media.media("sm") {
+        width: $_100;
+    }
+}
+
+.common-section-layout-no-sidebar {
+    width: $_100;
+    height: $_100;
+    border-left: .1px solid rgb(131, 131, 131);
+    @include flex.flex();
+}
+
+.common-inner-section-layout-left-side {
+    width: $_50;
+    height: $_100;
+
+    @include media.media("sm") {
+        width: $_100;
+    }
+}
+
+.common-inner-section-layout-right-side {
+    width: $_50;
+    height: $_100;
+    border-left: .1px solid gray;
+
+    @include media.media("sm") {
+        display: $none;
+    }
+}

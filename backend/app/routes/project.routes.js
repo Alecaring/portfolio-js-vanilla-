@@ -5,24 +5,9 @@ const router = require("express").Router();
 
 
 
-router.get(
-    // path
-    "/get",
+router.get("/get", controller.getAllProjects);
 
-    // controller
-    controller.getAllProjects
-);
-
-router.post(
-    // path
-    "/create-new-card",
-
-    // miidleware
-    authJwt.verifyToken,
-    
-    // controller
-    controller.createNewCard
-);
-
+router.post("/create-new-card", authJwt.verifyToken, controller.createNewCard);
 
 module.exports = router;
+

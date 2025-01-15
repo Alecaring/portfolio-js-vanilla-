@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faL, faMoon, faSun, faX } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import "../scss/partials/navbar.scss";
 import { setTheme } from "../contexts/LightContext";
+import Footer from "./Footer";
 
 
 
@@ -12,6 +13,8 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   const { themes, handleLightApp } = setTheme();
+  const location = useLocation();
+  const isEditor = location.pathname.includes("/editor");
 
   const [navLinks, setNavLinks] = useState([
     {
@@ -49,13 +52,15 @@ const Navbar = () => {
     setIsMenuOpen(prevIsMenuOpen => !prevIsMenuOpen);
   }
 
+  const ownerName = user ? "_admin-dashboard" : "_alessio-caringella";
+  const linkTo = user ? "/admin" : "/";
 
   return (
 
     <header className="container-navbar-desktop">
       <div className="inner-container-name-cell">
-        <NavLink to={user ? "/admin" : "/"} end>
-          {user ? "_admin-dashboard" : "_alessio-caringella"}
+        <NavLink to={linkTo} end>
+          {ownerName}
         </NavLink>
       </div>
       <div className="inner-container-links">
@@ -68,6 +73,8 @@ const Navbar = () => {
                 <NavLink to={s.to} className={s.className} end>{s.content}</NavLink>
               </li>
             ))}
+            
+            <li className={isEditor ? "special-editor-opened" : "none"}>_editor</li>
           </ul>
         </div>
         <div className="links-right">
@@ -103,7 +110,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </header>
   );

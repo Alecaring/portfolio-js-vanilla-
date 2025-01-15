@@ -1,0 +1,112 @@
+@use "../mixin/flex.scss" as flex;
+@use "../mixin/media.scss" as media;
+@import "../variables/var.scss";
+
+
+.container-footer {
+    width: $_100;
+    height: $_7;
+    border-top: .1px solid rgba(128, 128, 128, 0.653);
+    border-radius: 0 0 1rem 1rem;
+    @include flex.flex(_, space-between, _, _);
+
+    @include media.media("sm") {
+        height: $_10;
+
+    }
+
+
+    .inner-container-left {
+        border-radius: 0 0 0 1rem;
+
+        @include media.media("sm") {
+            display: $none;
+        }
+
+        ul {
+            height: $_100;
+            @include flex.flex();
+            border-radius: inherit;
+
+            li {
+                border-radius: inherit;
+                height: $_100;
+                padding: 0 2rem;
+                border-right: 1px solid rgba(128, 128, 128, 0.653);
+                @include flex.flex(_, center, center, _);
+
+                .icon {
+                    font-size: 1.5rem;
+                }
+
+            }
+        }
+    }
+
+    .inner-container-right {
+        border-radius: 0 0 1rem 0;
+
+        @include media.media("sm") {
+            display: $none;
+        }
+
+        ul {
+            height: $_100;
+            @include flex.flex();
+            border-radius: inherit;
+
+
+            li {
+                border-radius: inherit;
+                height: $_100;
+                padding: 0 2rem;
+                border-left: 1px solid rgba(128, 128, 128, 0.653);
+                @include flex.flex(_, center, center, _);
+
+                a {
+                    @include flex.flex(_, center, center,_, 1rem);
+
+                    .icon {
+                        font-size: 1.5rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .inner-container-left-mobile {
+        display: $none;
+
+        @include media.media("sm") {
+            width: $_55;
+            height: $_100;
+            @include flex.flex(_, _, center, _);
+            padding: 1rem;
+        }
+    }
+
+    .inner-container-right-mobile {
+        display: $none;
+
+        @include media.media("sm") {
+            width: $_45;
+            height: $_100;
+            @include flex.flex();
+        }
+
+        ul {
+            width: $_100;
+            @include flex.flex();
+
+            li {
+                width: calc(100% / 3);
+                height: $_100;
+                @include flex.flex(_, center, center, _);
+                border-left: .1px solid gray;
+            }
+        }
+    }
+
+}

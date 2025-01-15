@@ -80,6 +80,7 @@ async function initial() {
       image: "https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?resize=1024%2C675&ssl=1",
       icon: "R",
       description: "il progetto piu bello del mondo",
+      repositoryName: "Portfolio_App"
     });
 
     // Creazione di un utente

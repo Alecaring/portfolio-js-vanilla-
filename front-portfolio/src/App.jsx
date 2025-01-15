@@ -1,8 +1,12 @@
+import { lazy } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
-import AuthenticatedApp from "./components/AuthenticatedApp";
+const AuthenticatedApp = lazy(() => import("./components/AuthenticatedApp"));
 import UnauthenticatedApp from "./components/UnauthenticatedApp";
 import { setTheme } from "./contexts/LightContext";
+import './scss/index.scss';
+import { GameProvider } from "./contexts/GameContext";
+
 
 
 const App = () => {
@@ -11,11 +15,13 @@ const App = () => {
 
   return (
     <Router>
-      <div className={`app ${themes.bgThemeSecondary} transition-02s`}>
-        <div className={`root ${themes.bgThemeMain} ${themes.txtTheme} transition-02s`}>
-          {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+      <GameProvider>
+        <div className={`app ${themes.bgThemeSecondary} transition-02s`}>
+          <div className={`root ${themes.bgThemeMain} ${themes.txtTheme} transition-02s`}>
+            {!user ? <UnauthenticatedApp /> : <AuthenticatedApp />}
+          </div>
         </div>
-      </div>
+      </GameProvider>
     </Router>
   );
 };

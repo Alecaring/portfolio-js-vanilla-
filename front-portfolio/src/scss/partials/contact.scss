@@ -1,0 +1,194 @@
+@use "../mixin/flex.scss" as flex;
+@use "../mixin/media.scss" as media;
+
+
+.container-left-contacts {
+    width: 100%;
+    height: 100%;
+    @include flex.flex(column, flex-start, _, _);
+    border-right: .1px solid white;
+
+    @include media.media("sm") {
+        border-right: none;
+    }
+
+    .top-nav {
+        width: 100%;
+        border-bottom: .1px solid rgb(154, 154, 154);
+
+        @include media.media("sm") {
+            display: none;
+        }
+
+
+        .cell-opened {
+            padding: .5rem 1.5rem;
+            border-right: .1px solid white;
+            display: inline-block;
+            height: 100%;
+
+            .inner-cellOpend {
+                @include flex.flex(_, flex-start, center, _, .7rem);
+
+                svg {
+                    font-size: .7rem;
+                    padding-top: .1rem;
+                }
+
+            }
+        }
+    }
+
+    .form-contacts {
+        width: 100%;
+        height: 80%;
+        @include flex.flex(_, center, center, _, _);
+
+        @include media.media("sm") {
+            height: 100%;
+        }
+
+
+        .container-response-success {
+            @include flex.flex(column, center, center, _, 1rem);
+
+            h1 {
+                font-size: 2rem;
+
+                @include media.media("sm") {
+                    font-size: 1.6rem;
+                }
+            }
+
+            p {
+                text-align: center;
+                width: 75%;
+                color: gray;
+                font-size: 1.3rem;
+
+                @include media.media("sm") {
+                    font-size: 1rem;
+                }
+            }
+
+            button {
+                padding: .5rem 1rem;
+                border: none;
+                margin-top: 1rem;
+                background-color: #6c91bd;
+                border-radius: .5rem;
+            }
+        }
+
+        form {
+            width: 60%;
+            @include flex.flex(column, _, flex-start, _, 1.5rem);
+
+            @include media.media("sm") {
+                width: 80%;
+                padding-bottom: 4rem;
+            }
+
+
+            div {
+                width: 100%;
+                @include flex.flex(column, _, _, _, .5rem);
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    border: 1px solid #8b8b8b;
+                    /* Un colore più scuro */
+                    background-color: #f9f9f9;
+                    /* Colore chiaro per evidenziare l'ombra */
+                    box-shadow: inset -8px -8px -16px rgba(255, 222, 173, 0.8),
+                        inset 8px 8px 16px rgba(245, 222, 179, 0.8);
+                }
+
+            }
+
+            button {
+                padding: .5rem 1rem;
+                margin-top: 2rem;
+                border: none;
+                background-color: #6c91bd;
+                border-radius: .5rem;
+            }
+        }
+    }
+}
+
+.container-right-contacts {
+    width: 100%;
+    height: 100%;
+
+    @include media.media("sm") {
+        display: none;
+    }
+
+
+    .top-nav {
+        width: 100%;
+        border-bottom: .1px solid rgb(183, 175, 175);
+
+        .cell-opened {
+            width: auto;
+            padding: .5rem 1.5rem;
+            display: inline-block;
+            border-right: .1px solid white;
+            height: 100%;
+
+            .inner-cellOpend {
+                @include flex.flex(_, flex-start, center, _, .7rem);
+
+                svg {
+                    font-size: .7rem;
+                    padding-top: .1rem;
+                }
+
+            }
+        }
+    }
+
+    .form-contacts-graphics {
+        width: 90%;
+        height: 80%;
+        @include flex.flex(column, center, flex-start, _, .5rem);
+        margin: 0 auto;
+
+        .cont-rows-contacts {
+            @include flex.flex(_, _, flex-start, _, .6rem);
+
+            .colls-numered {
+                width: 10px;
+                @include flex.flex(_, flex-end, _, _, _);
+                margin-right: 1rem;
+            }
+
+            .const {
+                color: #b57fcc;
+            }
+
+            .const-assignament {
+                color: #4c5cd4;
+            }
+
+            .method {
+                color: #4c5cd4;
+
+            }
+
+            .class {
+                display: inline-block;
+                white-space: wrap;
+                color: #ec9b5b;
+            }
+
+            .space1 {
+                padding-left: 2rem;
+            }
+        }
+    }
+}

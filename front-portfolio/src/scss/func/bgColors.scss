@@ -2,6 +2,9 @@ $colors: (
     black: black,
     dark-blue: #001627,
     white: white,
+    purple: rebeccapurple,
+    lightGrey: #0016275b,
+
 );
 
 @each $color, $value in $colors {
